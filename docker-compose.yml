@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  db: 
+    build: ./src/mysql
+    ports: 
+        - "3306:3306"
+    restart: always
+    
+  app:
+    build: ./src/app
+    ports:
+        - "8080:80"
+    links:
+        - db:db
+    restart: always
