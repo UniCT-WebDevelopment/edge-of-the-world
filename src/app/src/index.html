@@ -55,11 +55,11 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contatti</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accedi <span class="caret"></span></a>
+                    <li class="dropdown" id="dropdown_menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="access">Area Privata <span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
-                                <div class="row">
+                                <div class="row" id="login-menu">
                                     <div class="col-md-12">
                                         <form method="get" id="login-nav">
                                             <div class="form-group">
@@ -85,8 +85,17 @@
                                         New here ? <a href="#"><b>Join Us</b></a>
                                     </div>
                                 </div>
+                                <div class="row" id="private-panel">
+                                    <div class="col-md-12 private-link">
+                                <a href="./admin/dashboard.php">Dashboard</a>
+                                    </div>
+                                    <div class="col-md-12 private-link">
+                                    <a href="logout.php">Logout</a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

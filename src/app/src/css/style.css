@@ -35,6 +35,10 @@
     color:black;
 }
 
+.private-link a{
+    color:black;
+}
+
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;
