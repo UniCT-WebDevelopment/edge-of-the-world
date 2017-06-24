@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+
+if(!isset($_SESSION['username'])){
+    $access_validation=1;
+}
+else{
+    $access_validation=0;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Porco Dio Enterprise</title>
+    <title>Edge of the World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +40,6 @@
     <script src="js/login.js"></script>
     <script src="node_modules/js-sha512/src/sha512.js"></script>
 
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -41,8 +52,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
-                </a>
+                    <i class="fa fa-fw fa-globe"></i> Edge of the World</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,12 +63,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contatti</a>
                     </li>
                     <li class="dropdown" id="dropdown_menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="access">Area Privata <span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu">
                             <li>
+                                <?php if($access_validation == 1) : ?>
                                 <div class="row" id="login-menu">
                                     <div class="col-md-12">
                                         <form method="get" id="login-nav">
@@ -85,14 +99,16 @@
                                         New here ? <a href="#"><b>Join Us</b></a>
                                     </div>
                                 </div>
+                                <?php else : ?>
                                 <div class="row" id="private-panel">
                                     <div class="col-md-12 private-link">
-                                <a href="./admin/dashboard.php">Dashboard</a>
+                                        <a href="./admin/dashboard.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
                                     </div>
                                     <div class="col-md-12 private-link">
-                                    <a href="logout.php">Logout</a>
+                                    <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Logout</a>
                                     </div>
                                 </div>
+                                <?php endif; ?>
                             </li>
                         </ul>
                     </li>
@@ -109,9 +125,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Porco Dio</h1>
-                        <p class="intro-text">Una divinità che fa cagare al cazzo
-                            <br>Creato da gesù porco</p>
+                        <h1 class="brand-heading">Edge of the World</h1>
+                        <p class="intro-text">"Quando cominciai a trafficare con il programma che avrebbe poi fatto nascere l'idea del World Wide Web,
+                            <br> lo chiamai Enquire, da Enquire Within upon Everything, 'entrate pure per avere informazioni su ogni argomento'."
+                            <br>Tim Berners-Lee, L'architettura del nuovo Web, 1999
+                        </p>
+                        <div>
+                        <img src="img/tim-berner-lee.jpg" class="img-circle" width="204" height="204">
+                        </div>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -125,36 +146,21 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+                <h2>About Edge of The World</h2>
+                <p>Siamo un'azienda leader nella realizzazione di siti web</p>
             </div>
         </div>
     </section>
-
-    <!-- Download Section
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                <h2>Contact Edge of the World</h2>
+                <p>Manda una mail per informazioni e per eventuali preventivi!</p>
+                <p><a href="mailto:support@edgeoftherworld.com">support@edgeoftheworld.com</a>
                 </p>
+                <!--
                 <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
@@ -166,6 +172,7 @@
                         <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
                 </ul>
+                -->
             </div>
         </div>
     </section>
@@ -176,7 +183,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Alex Pitrolo 2017</p>
+            <p>Copyright &copy; Edge of the World 2017</p>
         </div>
     </footer>
 
@@ -186,8 +193,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
+    <!-- Plugin JavaScript Vedere se posso sotituirlo con una locale-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>

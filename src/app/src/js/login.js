@@ -33,34 +33,6 @@ $('document').ready(function()
         });
         return false;
     });
-    /* login submit */
-
-
-    $('#access').hover(function(){
-        event.preventDefault();
-
-        $.ajax({
-
-        type : 'GET',
-        url : '../check_login.php',
-        data: {params: "check"},
-        dataType:'json',
-
-            success :  function(data) {
-
-                if (data.response === 1) {
-                    $('#login-menu').hide();
-                    $('#private-panel').show();
-                }
-                else {
-                    $('#private-panel').hide();
-                    $('#login-menu').show();
-                }
-            }
-
-        });
-
-    });
 });
 
 
