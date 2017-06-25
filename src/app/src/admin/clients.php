@@ -35,14 +35,18 @@ if(!isset($_SESSION['username']))
 
     <link href="../css/grayscale.min.css" rel="stylesheet" type="text/css">
 
-    <script src="js/jquery.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/client.css">
 
 
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.css"/>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.js"></script>
+
+
 
 
     <script src="js/clients.js"></script>
@@ -51,6 +55,29 @@ if(!isset($_SESSION['username']))
 </head>
 
 <body>
+<div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Aggiorna</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="c-f">C.F.</label>
+                    <input class="form-control" id="c_f">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -138,6 +165,7 @@ if(!isset($_SESSION['username']))
                                     <th>Telefono</th>
                                     <th>Numero Siti</th>
                                     <th>Spesa Totale</th>
+                                    <th>Options</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -148,6 +176,7 @@ if(!isset($_SESSION['username']))
                                     <th>Telefono</th>
                                     <th>Numero Siti</th>
                                     <th>Spesa Totale</th>
+                                    <th>Options</th>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -155,7 +184,6 @@ if(!isset($_SESSION['username']))
                     </div>
                 </div>
             </div>
-
         </div>
         <!-- /.container-fluid -->
 
@@ -164,8 +192,6 @@ if(!isset($_SESSION['username']))
 
 </div>
 <!-- /#wrapper -->
-
-
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

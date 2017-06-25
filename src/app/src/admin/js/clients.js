@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    var client_datatable= $('#client-table').DataTable({
+    var client_table= $('#client-table').DataTable({
                                     "processing": true,
                                     //"serverSide": true,
                                     "bDestroy": true,
@@ -16,13 +16,30 @@ $(document).ready(function()
                                         {"mData": "Telefono"},
                                         {"mData": "N_siti"},
                                         {"mData": "Spesa"},
-
+                                        {"defaultContent":
+                                        '<button id="update" data-toggle="modal">Aggiorna</button>' +
+                                        '<button id="delete">Elimina</button>'},
                                     ],
 
                                 });
 
+
+
+
+    $('#client-table tbody').on( 'click', '#update', function () {
+        event.preventDefault();
+        var data = client_table.rows($(this).parents('tr')).data();
+        var data2=Object.values(data[0]); //devo convertire l'oggetto in array prima di accedere
+        $("#c_f").val(data2[0]);
+        console.log(data2[0]);
+
+        $("#update-modal").modal('show');
+    } );
+
+
     $('#search-field').keyup(function () {
-        client_datatable.search($('#search-field').val()).draw();
+        client_table.search($('#search-field').val()).draw();
 
     });
+
 });
