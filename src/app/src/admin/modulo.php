@@ -136,7 +136,7 @@ if(!isset($_SESSION['username']))
                     <a href="clients.php"><i class="fa fa-fw fa-btc"></i> Gestione Clienti</a>
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-fw fa-briefcase"></i> Gestione Dipendenti</a>
+                    <a href="developer.php"><i class="fa fa-fw fa-briefcase"></i> Gestione Dipendenti</a>
                 </li>
                 <li>
                     <a href=""><i class="fa fa-fw fa-columns"></i> Gestione Layout</a>

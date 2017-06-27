@@ -39,7 +39,7 @@ if(!isset($_SESSION['username']))
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/client.css">
+    <link rel="stylesheet" type="text/css" href="css/developer.css">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.css"/>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['username']))
 
 
 
-    <script src="js/clients.js"></script>
+    <script src="js/developer.js"></script>
 
 
 </head>
@@ -67,28 +67,20 @@ if(!isset($_SESSION['username']))
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="c-f">C.F.</label>
-                    <input class="form-control" id="c_f">
+                    <label for="id-developer">P.IVA</label>
+                    <input type="text" class="form-control" placeholder="P.IVA" id="id-developer" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="city">Città</label>
-                    <input class="form-control" id="city">
+                    <label for="nome-developer">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" id="nome-developer">
                 </div>
                 <div class="form-group">
-                    <label for="address">Indirizzo</label>
-                    <input class="form-control" id="address">
+                    <label for="cognome-developer">Cognome</label>
+                    <input type="text" class="form-control" placeholder="Cognome" id="cognome-developer">
                 </div>
                 <div class="form-group">
-                    <label for="tel_number">Telefono</label>
-                    <input class="form-control" id="tel_number">
-                </div>
-                <div class="form-group">
-                    <label for="n_sites">Numero Siti</label>
-                    <input class="form-control" id="n_sites">
-                </div>
-                <div class="form-group">
-                    <label for="total_cost">Spesa Totale</label>
-                    <input class="form-control" id="total_cost">
+                    <label for="tel-developer">Telefono</label>
+                    <input type="text" class="form-control" placeholder="Telefono" id="tel-developer">
                 </div>
             </div>
             <div class="modal-footer">
@@ -167,7 +159,7 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                     Dashboard  <small>Gestione Clienti</small>
+                     Dashboard  <small>Gestione Dipendenti</small>
                     </h1>
                 </div>
             </div>
@@ -175,7 +167,7 @@ if(!isset($_SESSION['username']))
 
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" placeholder="Cerca Clienti" id="search-field">
+                    <input type="text" class="form-control" placeholder="Cerca Sviluppatore" id="search-field-developer">
                 </div>
             </div>
 
@@ -183,26 +175,22 @@ if(!isset($_SESSION['username']))
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <table id="client-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <table id="developer-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>C.F.</th>
-                                    <th>Città</th>
-                                    <th>Indirizzo</th>
+                                    <th>P_IVA</th>
+                                    <th>Nome</th>
+                                    <th>Cognome</th>
                                     <th>Telefono</th>
-                                    <th>Numero Siti</th>
-                                    <th>Spesa Totale</th>
                                     <th>Options</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>C.F.</th>
-                                    <th>Città</th>
-                                    <th>Indirizzo</th>
+                                    <th>P_IVA</th>
+                                    <th>Nome</th>
+                                    <th>Cognome</th>
                                     <th>Telefono</th>
-                                    <th>Numero Siti</th>
-                                    <th>Spesa Totale</th>
                                     <th>Options</th>
                                 </tr>
                                 </tfoot>
@@ -217,7 +205,7 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Dashboard  <small>Nuovo Cliente</small>
+                        Dashboard  <small>Nuovo Sviluppatore</small>
                     </h1>
                 </div>
             </div>
@@ -225,30 +213,24 @@ if(!isset($_SESSION['username']))
 
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" id="new_cliente">
+                    <form method="post" id="new_developer">
                     <div class="form-group">
-                        <label for="c-f">C.F.</label>
-                        <input type="text" class="form-control" placeholder="C.F." id="c_f_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Città</label>
-                        <input type="text" class="form-control" placeholder="Città" id="city_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Indirizzo</label>
-                        <input type="text" class="form-control" placeholder="Indirizzo" id="address_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="tel_number">Telefono</label>
-                        <input type="text" class="form-control" placeholder="Telefono" id="tel_number_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="n_sites">Numero Siti</label>
-                        <input type="number" class="form-control" placeholder="Numero Siti" id="n_sites_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="total_cost">Spesa Totale</label>
-                        <input type="number" class="form-control" placeholder="Spesa Totale" id="total_cost_new">
+                        <div class="form-group">
+                            <label for="id-developer-new">P.IVA</label>
+                            <input type="text" class="form-control" placeholder="P.IVA" id="id-developer-new">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome-developer-new">Nome</label>
+                            <input type="text" class="form-control" placeholder="Nome" id="nome-developer-new">
+                        </div>
+                        <div class="form-group">
+                            <label for="cognome-developer-new">Cognome</label>
+                            <input type="text" class="form-control" placeholder="Cognome" id="cognome-developer-new">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel-developer-new">Telefono</label>
+                            <input type="text" class="form-control" placeholder="Telefono" id="tel-developer-new">
+                        </div>
                     </div>
                     </form>
                 </div>
@@ -257,11 +239,10 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <button type="button" class="btn btn-block btn-primary" id="new_client_save">Salva</button>
+                    <button type="button" class="btn btn-block btn-primary" id="new_developer_save">Salva</button>
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <div class="row"> <div class="col-md-12"></div></div>
 
 
         </div>
