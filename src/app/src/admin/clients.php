@@ -55,6 +55,7 @@ if(!isset($_SESSION['username']))
 </head>
 
 <body>
+
 <div class="modal fade" id="update-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -68,6 +69,26 @@ if(!isset($_SESSION['username']))
                 <div class="form-group">
                     <label for="c-f">C.F.</label>
                     <input class="form-control" id="c_f">
+                </div>
+                <div class="form-group">
+                    <label for="city">Città</label>
+                    <input class="form-control" id="city">
+                </div>
+                <div class="form-group">
+                    <label for="address">Indirizzo</label>
+                    <input class="form-control" id="address">
+                </div>
+                <div class="form-group">
+                    <label for="tel_number">Telefono</label>
+                    <input class="form-control" id="tel_number">
+                </div>
+                <div class="form-group">
+                    <label for="n_sites">Numero Siti</label>
+                    <input class="form-control" id="n_sites">
+                </div>
+                <div class="form-group">
+                    <label for="total_cost">Spesa Totale</label>
+                    <input class="form-control" id="total_cost">
                 </div>
             </div>
             <div class="modal-footer">
@@ -184,6 +205,58 @@ if(!isset($_SESSION['username']))
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Dashboard  <small>Nuovo Cliente</small>
+                    </h1>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class=""col-md-12>
+                    <form method="post" id="new_cliente">
+                    <div class="form-group">
+                        <label for="c-f">C.F.</label>
+                        <input type="text" class="form-control" placeholder="C.F." id="c_f_new">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Città</label>
+                        <input type="text" class="form-control" placeholder="Città" id="city_new">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Indirizzo</label>
+                        <input type="text" class="form-control" placeholder="Indirizzo" id="address_new">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel_number">Telefono</label>
+                        <input type="text" class="form-control" placeholder="Telefono" id="tel_number_new">
+                    </div>
+                    <div class="form-group">
+                        <label for="n_sites">Numero Siti</label>
+                        <input type="number" class="form-control" placeholder="Numero Siti" id="n_sites_new">
+                    </div>
+                    <div class="form-group">
+                        <label for="total_cost">Spesa Totale</label>
+                        <input type="number" class="form-control" placeholder="Spesa Totale" id="total_cost_new">
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-block btn-primary" id="new_client_save">Salva</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+
+
         </div>
         <!-- /.container-fluid -->
 

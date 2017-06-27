@@ -22,11 +22,10 @@ $('document').ready(function()
                 console.log("try");
                 if(data.response === 1 ){
 
-                    log_in=1;
                     window.location.replace(data.url);
                 }
                 else{
-                   console.log("login incorrect");
+                    console.log("login incorrect");
 
                 }
             }
