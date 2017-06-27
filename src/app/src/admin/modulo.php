@@ -39,7 +39,7 @@ if(!isset($_SESSION['username']))
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/client.css">
+    <link rel="stylesheet" type="text/css" href="css/modulo.css">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.css"/>
@@ -49,7 +49,7 @@ if(!isset($_SESSION['username']))
 
 
 
-    <script src="js/clients.js"></script>
+    <script src="js/modulo.js"></script>
 
 
 </head>
@@ -67,28 +67,20 @@ if(!isset($_SESSION['username']))
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="c-f">C.F.</label>
-                    <input class="form-control" id="c_f">
+                    <label for="id-modulo">ID</label>
+                    <input type="text" class="form-control" placeholder="ID" id="id-modulo" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="city">Città</label>
-                    <input class="form-control" id="city">
+                    <label for="nome-modulo">Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" id="nome-modulo">
                 </div>
                 <div class="form-group">
-                    <label for="address">Indirizzo</label>
-                    <input class="form-control" id="address">
+                    <label for="funzione-modulo">Funzione</label>
+                    <input type="text" class="form-control" placeholder="Funzione" id="funzione-modulo">
                 </div>
                 <div class="form-group">
-                    <label for="tel_number">Telefono</label>
-                    <input class="form-control" id="tel_number">
-                </div>
-                <div class="form-group">
-                    <label for="n_sites">Numero Siti</label>
-                    <input class="form-control" id="n_sites">
-                </div>
-                <div class="form-group">
-                    <label for="total_cost">Spesa Totale</label>
-                    <input class="form-control" id="total_cost">
+                    <label for="costo-modulo">Costo</label>
+                    <input type="text" class="form-control" placeholder="Costo" id="costo-modulo">
                 </div>
             </div>
             <div class="modal-footer">
@@ -167,7 +159,7 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                     Dashboard  <small>Gestione Clienti</small>
+                     Dashboard  <small>Gestione Moduli</small>
                     </h1>
                 </div>
             </div>
@@ -175,7 +167,7 @@ if(!isset($_SESSION['username']))
 
             <div class="row">
                 <div class="col-md-12">
-                    <input type="text" class="form-control" placeholder="Cerca Clienti" id="search-field">
+                    <input type="text" class="form-control" placeholder="Cerca Modulo" id="search-field-modulo">
                 </div>
             </div>
 
@@ -183,26 +175,22 @@ if(!isset($_SESSION['username']))
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <table id="client-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <table id="modulo-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
-                                    <th>C.F.</th>
-                                    <th>Città</th>
-                                    <th>Indirizzo</th>
-                                    <th>Telefono</th>
-                                    <th>Numero Siti</th>
-                                    <th>Spesa Totale</th>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Funzione</th>
+                                    <th>Costo</th>
                                     <th>Options</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>C.F.</th>
-                                    <th>Città</th>
-                                    <th>Indirizzo</th>
-                                    <th>Telefono</th>
-                                    <th>Numero Siti</th>
-                                    <th>Spesa Totale</th>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Funzione</th>
+                                    <th>Costo</th>
                                     <th>Options</th>
                                 </tr>
                                 </tfoot>
@@ -217,7 +205,7 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Dashboard  <small>Nuovo Cliente</small>
+                        Dashboard  <small>Nuovo Modulo</small>
                     </h1>
                 </div>
             </div>
@@ -225,31 +213,19 @@ if(!isset($_SESSION['username']))
 
             <div class="row">
                 <div class="col-md-12">
-                    <form method="post" id="new_cliente">
+                    <form method="post" id="new_modulo">
                     <div class="form-group">
-                        <label for="c-f">C.F.</label>
-                        <input type="text" class="form-control" placeholder="C.F." id="c_f_new">
+                        <label for="nome-modulo-new">Nome</label>
+                        <input type="text" class="form-control" placeholder="Nome" id="nome-modulo-new">
                     </div>
                     <div class="form-group">
-                        <label for="city">Città</label>
-                        <input type="text" class="form-control" placeholder="Città" id="city_new">
+                        <label for="funzione-modulo-new">Funzione</label>
+                        <input type="text" class="form-control" placeholder="Funzione" id="funzione-modulo-new">
                     </div>
-                    <div class="form-group">
-                        <label for="address">Indirizzo</label>
-                        <input type="text" class="form-control" placeholder="Indirizzo" id="address_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="tel_number">Telefono</label>
-                        <input type="text" class="form-control" placeholder="Telefono" id="tel_number_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="n_sites">Numero Siti</label>
-                        <input type="number" class="form-control" placeholder="Numero Siti" id="n_sites_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="total_cost">Spesa Totale</label>
-                        <input type="number" class="form-control" placeholder="Spesa Totale" id="total_cost_new">
-                    </div>
+                        <div class="form-group">
+                            <label for="costo-modulo-new">Costo</label>
+                            <input type="text" class="form-control" placeholder="Costo" id="costo-modulo-new">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -257,11 +233,10 @@ if(!isset($_SESSION['username']))
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <button type="button" class="btn btn-block btn-primary" id="new_client_save">Salva</button>
+                    <button type="button" class="btn btn-block btn-primary" id="new_modulo_save">Salva</button>
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <div class="row"> <div class="col-md-12"></div></div>
 
 
         </div>
