@@ -70,36 +70,79 @@ if(!isset($_SESSION['username']))
             </div>
             <div class="modal-body">
 
+                <div class="form-group">
+                    <label for="id_layout">ID Layout</label>
+                    <input type="text" class="form-control" id="id_layout" disabled>
+                </div>
+
                 <div class="row">
-                    <div class="col-md-12">
-                        <input type="text" class="form-control" placeholder="Cerca Modulo" id="search-field-modulo">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <small>Moduli Disponibili</small>
+                        </h1>
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-12">
                 <table id="modulo-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                     <tr>
-                        <th></th>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Funzione</th>
                         <th>Costo</th>
+                        <th>Options</th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                        <th></th>
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Funzione</th>
                         <th>Costo</th>
+                        <th>Options</th>
                     </tr>
                     </tfoot>
                 </table>
             </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           <small>Moduli Presenti</small>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+            <table id="componente-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Funzione</th>
+                    <th>Costo</th>
+                    <th>Options</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Funzione</th>
+                    <th>Costo</th>
+                    <th>Options</th>
+                </tr>
+                </tfoot>
+            </table>
+            </div>
+                </div>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="modulo-modal-save">Save changes</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -213,6 +256,8 @@ if(!isset($_SESSION['username']))
                     </div>
                 </div>
             </div>
+
+
 
 
 
