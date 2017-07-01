@@ -15,27 +15,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modulo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/modulo.php">
+      <file leaf-file-name="clients.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/clients.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="141" column="39" lean-forward="false" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
+            <state relative-caret-position="286">
+              <caret line="141" column="55" lean-forward="false" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/layout_search.php">
+      <file leaf-file-name="clients.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/js/clients.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-              <folding>
-                <marker date="1498918983998" expanded="true" signature="325:345" ph="SELECT * FRO... LAYOUT" />
-                <marker date="1498918983998" expanded="true" signature="540:588" ph="SELECT count... COMPONENTE" />
-                <marker date="1498918983998" expanded="true" signature="540:589" ph="SELECT count... COMPONENTE" />
-                <marker date="1498918983998" expanded="true" signature="540:600" ph="SELECT count... COMPONENTE" />
-              </folding>
+            <state relative-caret-position="295">
+              <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/css/client.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,96 +48,19 @@
       <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="209" column="53" lean-forward="false" selection-start-line="209" selection-start-column="53" selection-end-line="209" selection-end-column="53" />
+            <state relative-caret-position="-714">
+              <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="40" selection-end-column="119" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="load_componente.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/load_componente.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-              <folding>
-                <marker date="1498833456862" expanded="true" signature="387:514" ph="SELECT ID_MO... COMPONENTE" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assign_developer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/assign_developer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <marker date="1498918664915" expanded="true" signature="480:571" ph="UPDATE LAYOU... " />
-                <marker date="1498918664915" expanded="true" signature="480:572" ph="UPDATE LAYOU... " />
-                <marker date="1498918664915" expanded="true" signature="480:643" ph="UPDATE LAYOU... " />
-                <marker date="1498918664915" expanded="true" signature="480:677" ph="UPDATE LAYOU... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clients_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/clients_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="42" selection-end-column="11" />
-              <folding>
-                <marker date="1498298013687" expanded="true" signature="325:339" ph="SELECT * FRO... film" />
-                <marker date="1498298013687" expanded="true" signature="325:346" ph="SELECT * FRO... CLIENTE" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="developer_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/developer_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-              <folding>
-                <marker date="1498577568524" expanded="true" signature="325:351" ph="SELECT * FRO... SVILUPPATORE" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="delete_assigned_developer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/delete_assigned_developer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-              <folding>
-                <marker date="1498919706210" expanded="true" signature="403:485" ph="UPDATE LAYOU... " />
-                <marker date="1498919706210" expanded="true" signature="403:562" ph="UPDATE LAYOU... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/js/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="711">
-              <caret line="336" column="39" lean-forward="false" selection-start-line="336" selection-start-column="39" selection-end-line="336" selection-end-column="39" />
+            <state relative-caret-position="-578">
+              <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="developer-assigned-search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/developer-assigned-search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding>
-                <marker date="1498919718026" expanded="true" signature="395:533" ph="SELECT SVILU... LAYOUT" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -153,6 +81,7 @@
       <find>success</find>
       <find>input</find>
       <find>modulo</find>
+      <find>layout-table</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -168,7 +97,6 @@
         <option value="$PROJECT_DIR$/admin/css/clients.css" />
         <option value="$PROJECT_DIR$/admin/db.php" />
         <option value="$PROJECT_DIR$/admin/clients_search.php" />
-        <option value="$PROJECT_DIR$/admin/css/client.css" />
         <option value="$PROJECT_DIR$/js/login.js" />
         <option value="$PROJECT_DIR$/admin/insert_cliente.php" />
         <option value="$PROJECT_DIR$/admin/delete_cliente.php" />
@@ -194,8 +122,6 @@
         <option value="$PROJECT_DIR$/admin/insert_componente.php" />
         <option value="$PROJECT_DIR$/admin/developer.php" />
         <option value="$PROJECT_DIR$/admin/modulo.php" />
-        <option value="$PROJECT_DIR$/admin/clients.php" />
-        <option value="$PROJECT_DIR$/admin/js/clients.js" />
         <option value="$PROJECT_DIR$/admin/css/layout.css" />
         <option value="$PROJECT_DIR$/admin/layout.php" />
         <option value="$PROJECT_DIR$/delete_assigned_developer.php" />
@@ -204,6 +130,9 @@
         <option value="$PROJECT_DIR$/admin/delete_assigned_developer.php" />
         <option value="$PROJECT_DIR$/admin/developer-assigned-search.php" />
         <option value="$PROJECT_DIR$/admin/js/layout.js" />
+        <option value="$PROJECT_DIR$/admin/js/clients.js" />
+        <option value="$PROJECT_DIR$/admin/clients.php" />
+        <option value="$PROJECT_DIR$/admin/css/client.css" />
       </list>
     </option>
   </component>
@@ -440,12 +369,12 @@
       <workItem from="1498759843240" duration="3539000" />
       <workItem from="1498808448682" duration="9885000" />
       <workItem from="1498831812084" duration="7996000" />
-      <workItem from="1498915630647" duration="4339000" />
+      <workItem from="1498915630647" duration="7051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129864000" />
+    <option name="totallyTimeSpent" value="132576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -488,13 +417,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/tables.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -739,34 +661,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/css/client.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/developer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="141" column="96" lean-forward="true" selection-start-line="141" selection-start-column="96" selection-end-line="141" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/clients.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="146" column="105" lean-forward="false" selection-start-line="146" selection-start-column="105" selection-end-line="146" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/js/clients.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="90" lean-forward="false" selection-start-line="21" selection-start-column="90" selection-end-line="21" selection-end-column="90" />
           <folding />
         </state>
       </provider>
@@ -826,57 +724,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/clients_search.php">
+    <entry file="file://$PROJECT_DIR$/admin/developer-assigned-search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="42" selection-end-column="11" />
+        <state relative-caret-position="289">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding>
-            <marker date="1498298013687" expanded="true" signature="325:339" ph="SELECT * FRO... film" />
-            <marker date="1498298013687" expanded="true" signature="325:346" ph="SELECT * FRO... CLIENTE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/assign_developer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <marker date="1498918664915" expanded="true" signature="480:571" ph="UPDATE LAYOU... " />
-            <marker date="1498918664915" expanded="true" signature="480:572" ph="UPDATE LAYOU... " />
-            <marker date="1498918664915" expanded="true" signature="480:643" ph="UPDATE LAYOU... " />
-            <marker date="1498918664915" expanded="true" signature="480:677" ph="UPDATE LAYOU... " />
+            <marker date="1498919718026" expanded="true" signature="395:533" ph="SELECT SVILU... LAYOUT" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/layout_search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+        <state relative-caret-position="748">
+          <caret line="44" column="11" lean-forward="true" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
           <folding>
             <marker date="1498918983998" expanded="true" signature="325:345" ph="SELECT * FRO... LAYOUT" />
             <marker date="1498918983998" expanded="true" signature="540:588" ph="SELECT count... COMPONENTE" />
             <marker date="1498918983998" expanded="true" signature="540:589" ph="SELECT count... COMPONENTE" />
             <marker date="1498918983998" expanded="true" signature="540:600" ph="SELECT count... COMPONENTE" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="209" column="53" lean-forward="false" selection-start-line="209" selection-start-column="53" selection-end-line="209" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/developer_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding>
-            <marker date="1498577568524" expanded="true" signature="325:351" ph="SELECT * FRO... SVILUPPATORE" />
           </folding>
         </state>
       </provider>
@@ -899,6 +765,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/assign_developer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <marker date="1498918664915" expanded="true" signature="480:571" ph="UPDATE LAYOU... " />
+            <marker date="1498918664915" expanded="true" signature="480:572" ph="UPDATE LAYOU... " />
+            <marker date="1498918664915" expanded="true" signature="480:643" ph="UPDATE LAYOU... " />
+            <marker date="1498918664915" expanded="true" signature="480:677" ph="UPDATE LAYOU... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <marker date="1498298013687" expanded="true" signature="325:339" ph="SELECT * FRO... film" />
+            <marker date="1498298013687" expanded="true" signature="325:346" ph="SELECT * FRO... CLIENTE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/developer_search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <marker date="1498577568524" expanded="true" signature="325:351" ph="SELECT * FRO... SVILUPPATORE" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/delete_assigned_developer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -910,20 +810,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/developer-assigned-search.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <marker date="1498919718026" expanded="true" signature="395:533" ph="SELECT SVILU... LAYOUT" />
-          </folding>
+        <state relative-caret-position="490">
+          <caret line="228" column="16" lean-forward="false" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/js/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="711">
-          <caret line="336" column="39" lean-forward="false" selection-start-line="336" selection-start-column="39" selection-end-line="336" selection-end-column="39" />
+        <state relative-caret-position="-578">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="40" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/css/client.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/clients.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="141" column="55" lean-forward="false" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/js/clients.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="44" />
           <folding />
         </state>
       </provider>

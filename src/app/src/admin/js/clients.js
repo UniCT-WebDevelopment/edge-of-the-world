@@ -19,13 +19,64 @@ $(document).ready(function()
                                         {"defaultContent":
                                         '<button id="update" data-toggle="modal">Aggiorna</button>' +
                                         '<button id="delete">Elimina</button>' +
-                                        '<button id="delete">Aggiungi Sito Web</button>'},
+                                        '<button id="manage-layout">Aggiungi Sito Web</button>'},
                                     ],
 
                                 });
 
+    var load_layout_table=function(){
+      var table=$('#layout-show-table').DataTable({
+            "processing": true,
+            //"serverSide": true,
+            "bDestroy": true,
+            // "bJQueryUI": true,
+            "sAjaxSource": "layout_search.php",
+            "bFilter ": true,
+            "responsive": true,
+            "aoColumns": [
+
+                {"mData": "ID"},
+                {"mData": "Costo Totale"},
+                {"mData": "Sviluppatore"},
+                {"mData": "Numero Moduli"},
+                {"defaultContent":
+                '<button id="add-layout">Aggiungi</button>'+
+                '<button id="show-modulo">Visualizza Moduli</button>'
+                },
+
+            ],
+
+        });
+        return table;
+    };
+
+   /* var load_current_layout_table=function(){
+        var table=  $('#current-layout-table').DataTable({
+            "processing": true,
+            //"serverSide": true,
+            "bDestroy": true,
+            // "bJQueryUI": true,
+            "sAjaxSource": "layout_assigned_search.php",
+            "bFilter ": true,
+            "responsive": true,
+            "aoColumns": [
+
+                {"mData": "ID"},
+                {"mData": "Costo Totale"},
+                {"mData": "Sviluppatore"},
+                {"mData": "Numero Moduli"},
+                {"defaultContent":
+                    '<button id="delete-layout">Elimina</button>' +
+                    '<button id="show-modulo">Visualizza Moduli</button>'},
 
 
+            ],
+
+        });
+        return table;
+    };
+
+*/
 
     $('#client-table tbody').on( 'click', '#update', function () {
         event.preventDefault();
@@ -71,7 +122,13 @@ $(document).ready(function()
         client_table.ajax.reload();
     });
 
+    $('#client-table tbody').on( 'click', '#manage-layout', function () {
+      var layout_table=load_layout_table();
+       $("#sito_web_modal").modal('show');
 
+
+
+    });
 
 
     $('#search-field').keyup(function () {
@@ -158,6 +215,8 @@ $(document).ready(function()
         client_table.ajax.reload();
         return false;
     });
+
+
 
 
 
