@@ -18,7 +18,8 @@ $(document).ready(function()
                                         {"mData": "Spesa"},
                                         {"defaultContent":
                                         '<button id="update" data-toggle="modal">Aggiorna</button>' +
-                                        '<button id="delete">Elimina</button>'},
+                                        '<button id="delete">Elimina</button>' +
+                                        '<button id="delete">Aggiungi Sito Web</button>'},
                                     ],
 
                                 });

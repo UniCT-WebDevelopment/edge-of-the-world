@@ -148,6 +148,95 @@ if(!isset($_SESSION['username']))
     </div>
 </div>
 
+<div class="modal fade" id="developer-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Lista moduli</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="id_layout_developer">ID Layout</label>
+                    <input type="text" class="form-control" id="id_layout_developer" disabled>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <small>Sviluppatori</small>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="developer-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>P_IVA</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Telefono</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>P_IVA</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Telefono</th>
+                                <th>Options</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <small>Sviluppatore Assegnato</small>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="developer-assigned-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                            <tr>
+                                <th>P_IVA</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Telefono</th>
+                                <th>Options</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>P_IVA</th>
+                                <th>Nome</th>
+                                <th>Cognome</th>
+                                <th>Telefono</th>
+                                <th>Options</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <div id="wrapper">
 
     <!-- Navigation -->
