@@ -74,6 +74,7 @@ $(document).ready(function()
 
     var load_developer_table=function() {
         var table = $('#developer-table').DataTable({
+            "pageLength": 5,
             "processing": true,
             //"serverSide": true,
             "bDestroy": true,
@@ -97,6 +98,7 @@ $(document).ready(function()
 
         var load_developer_assigned_table=function(id_layout){
             var table= $('#developer-assigned-table').DataTable({
+                "pageLength": 5,
                 "processing": true,
                 //"serverSide": true,
                 "bDestroy": true,

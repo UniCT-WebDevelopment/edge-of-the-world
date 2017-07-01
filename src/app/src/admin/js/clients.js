@@ -26,6 +26,7 @@ $(document).ready(function()
 
     var load_layout_table=function(){
       var table=$('#layout-show-table').DataTable({
+          "pageLength": 5,
             "processing": true,
             //"serverSide": true,
             "bDestroy": true,
@@ -52,6 +53,7 @@ $(document).ready(function()
 
    /* var load_current_layout_table=function(){
         var table=  $('#current-layout-table').DataTable({
+            "pageLength": 5,
             "processing": true,
             //"serverSide": true,
             "bDestroy": true,
