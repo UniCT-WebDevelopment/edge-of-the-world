@@ -82,7 +82,7 @@ create table UTENTE(
 )Engine='InnoDB';
     
 
-insert into UTENTE (USERNAME, PASSWORD, TYPE) values ("alexpitrolo@live.it", "83d97b71499bee6b9d42dee9d3a6e5d00ecc8c891346d25d1909b3aac9abaa0ad4864fe4eacf159cd3f4a0ad764178d014ac378dfffc5e4023f6dbcfb0992648", "admin");
+insert into UTENTE (USERNAME, PASSWORD, TYPE) values ("alex", "83d97b71499bee6b9d42dee9d3a6e5d00ecc8c891346d25d1909b3aac9abaa0ad4864fe4eacf159cd3f4a0ad764178d014ac378dfffc5e4023f6dbcfb0992648", "admin");
 
 insert into CLIENTE (CODICE_FISCALE, CITTA, INDIRIZZO, TELEFONO, N_SITI, SPESA_TOTALE) VALUES ("SCLFPP74L08L219T","Torino","Via Monteleone 99","3669382463",0,0);
 
@@ -111,5 +111,27 @@ insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567891", "A
 insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567892", "Marco", "Loggia", "3314567999");
 
 
+delimiter //
+create trigger add_componente
+after insert
+on COMPONENTE
+for each row
+begin
+    update LAYOUT
+    set COSTO_TOTALE=COSTO_TOTALE + (select COSTO from MODULO where MODULO.ID=NEW.ID_MODULO)
+    where ID=NEW.ID_LAYOUT;
+end //
 
+delimiter //
 
+create trigger delete_componente
+after delete
+on COMPONENTE
+for each row
+begin
+    update LAYOUT
+    set COSTO_TOTALE=COSTO_TOTALE - (select COSTO from MODULO where MODULO.ID=OLD.ID_MODULO)
+    where ID=OLD.ID_LAYOUT;
+end //
+
+delimiter ;

@@ -1,5 +1,10 @@
+
+
 $(document).ready(function()
 {
+    var modulo_table;
+    var componente_table;
+
     var client_table= $('#layout-table').DataTable({
                                     "processing": true,
                                     //"serverSide": true,
@@ -125,49 +130,53 @@ $(document).ready(function()
         $('#id_layout').val(current_layout[0]);
         var id_layout=current_layout[0];
 
-        var componente_table=load_componente_table(id_layout);
-        var modulo_table = load_modulo_table();
+        componente_table=load_componente_table(id_layout);
+        modulo_table = load_modulo_table();
         $("#modulo-modal").modal('show');
 
-        $("#componente-table").on('click', '#elimina-button', function(){
+    });
 
-            var rowData = componente_table.rows($(this).parents('tr')).data();
-            var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
-            var id_modulo=current_data[0];
+    $("#componente-table tbody").on('click', '#elimina-button', function(){
+
+        var rowData = componente_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
+        var id_modulo=current_data[0];
+        var id_layout=$('#id_layout').val();
 
 
-            $.ajax({
+        $.ajax({
 
 
 
-                type : 'POST',
-                url  : '../admin/delete_componente.php',
-                data: {id_layout: id_layout, id_modulo: id_modulo},
-                dataType: "json", // type of returned data
+            type : 'POST',
+            url  : '../admin/delete_componente.php',
+            data: {id_layout: id_layout, id_modulo: id_modulo},
+            dataType: "json", // type of returned data
 
-                success :  function(data)
-                {
-                    if(data.response === 0 ){
+            success :  function(data)
+            {
+                if(data.response === 0 ){
 
-                        console.log("Success delete");
+                    console.log("Success delete");
 
-                    }
-                    else if(data.response === 1){
-                        console.log("Failed delete");
-                    }
-                    else{
-                        console.log("POST problem");
-                    }
                 }
-            });
-            componente_table.ajax.reload();
-
+                else if(data.response === 1){
+                    console.log("Failed delete");
+                }
+                else{
+                    console.log("POST problem");
+                }
+            }
         });
+        componente_table.ajax.reload();
+        client_table.ajax.reload();
+    });
 
-    $('#modulo-table').on('click', '#add-button', function(){
+    $('#modulo-table tbody').on('click', '#add-button', function(){
         var rowData = modulo_table.rows($(this).parents('tr')).data();
         var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
         var id_modulo=current_data[0];
+        var id_layout=$('#id_layout').val();
 
         $.ajax({
 
@@ -197,8 +206,7 @@ $(document).ready(function()
             }
         });
         componente_table.ajax.reload();
-
-    });
+        client_table.ajax.reload();
 
     });
 

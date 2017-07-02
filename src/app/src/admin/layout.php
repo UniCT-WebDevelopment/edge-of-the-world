@@ -104,6 +104,8 @@ if(!isset($_SESSION['username']))
                         <th>Options</th>
                     </tr>
                     </tfoot>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
                 </div>
@@ -137,6 +139,8 @@ if(!isset($_SESSION['username']))
                     <th>Options</th>
                 </tr>
                 </tfoot>
+                <tbody>
+                </tbody>
             </table>
             </div>
                 </div>
