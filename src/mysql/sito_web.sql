@@ -92,5 +92,24 @@ insert into CLIENTE (CODICE_FISCALE,CITTA, INDIRIZZO, TELEFONO, N_SITI, SPESA_TO
 
 insert into CLIENTE (CODICE_FISCALE,CITTA, INDIRIZZO, TELEFONO, N_SITI, SPESA_TOTALE) VALUES ("ZTINLN68H20D969D","Roma","Via Genova 47","3946729551",0,0);
 
+insert into LAYOUT (COSTO_TOTALE) values (0);
+
+insert into LAYOUT (COSTO_TOTALE) values (0);
+
+insert into MODULO (NOME, FUNZIONE, COSTO) values ("Scroll bar", "Semplice scrollbar", 10);
+
+insert into MODULO (NOME, FUNZIONE, COSTO) values ("Carrello", "Modulo Carrello", 15);
+
+insert into MODULO (NOME, FUNZIONE, COSTO) values ("Log in", "Modulo di Login", 7);
+
+insert into MODULO (NOME, FUNZIONE, COSTO) values ("Register form", "Modulo di registrazione", 14);
+
+insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567890", "Giuseppe", "Bella", "3345678911");
+
+insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567891", "Angelo", "Cassano", "3382751678");
+
+insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567892", "Marco", "Loggia", "3314567999");
+
+
 
 
