@@ -62,7 +62,7 @@ if(!isset($_SESSION['username']))
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Lista moduli</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Aggiungi Sito Web</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -71,10 +71,10 @@ if(!isset($_SESSION['username']))
 
                 <div class="row">
                     <div class="col-lg-12">
-                <div class="form-group">
-                    <label for="codice_sito_web">Codice</label>
-                    <input type="text" class="form-control" id="codice_sito_web" disabled>
-                </div>
+                        <div class="form-group">
+                            <label for="codice_cliente">Codice Cliente</label>
+                            <input type="text" class="form-control " id="codice_cliente">
+                        </div>
                     </div>
                 </div>
 
@@ -92,6 +92,15 @@ if(!isset($_SESSION['username']))
                         <div class="form-group">
                             <label for="date_input">Data Pubblicazione</label>
                             <input type="text" class="form-control " id="date_input" placeholder="YYYY-MM-DD">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label for="id_layout">Layout</label>
+                            <input type="text" class="form-control " id="id_layout" disabled>
                         </div>
                     </div>
                 </div>
@@ -130,42 +139,10 @@ if(!isset($_SESSION['username']))
                         </table>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            <small>Layout Presenti</small>
-                        </h1>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <table id="current-layout-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Costo Totale</th>
-                                <th>Sviluppatore</th>
-                                <th>Options</th>
-                            </tr>
-                            </thead>
-                            <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>Costo Totale</th>
-                                <th>Sviluppatore</th>
-                                <th>Options</th>
-                            </tr>
-                            </tfoot>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="add_sito_web_button">Save changes</button>
             </div>
         </div>
     </div>

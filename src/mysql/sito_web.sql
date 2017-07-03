@@ -141,21 +141,18 @@ on SITO_WEB
 for each row
 begin
     update CLIENTE
-    set N_SITI=N_SITI+1
+    set N_SITI=N_SITI+1, SPESA_TOTALE= SPESA_TOTALE + (SELECT COSTO_TOTALE from LAYOUT WHERE ID=NEW.LAYOUT)
     where CODICE=NEW.CLIENTE;
 end //
 
 delimiter //
-create trigger add_sito
+create trigger remove_sito
 after delete
 on SITO_WEB
 for each row
 begin
     update CLIENTE
-    set N_SITI=N_SITI-1
+    set N_SITI=N_SITI-1, SPESA_TOTALE= SPESA_TOTALE - (SELECT COSTO_TOTALE from LAYOUT WHERE ID=OLD.LAYOUT)
     where CODICE=OLD.CLIENTE;
 end //
-
-delimiter ;
-
 

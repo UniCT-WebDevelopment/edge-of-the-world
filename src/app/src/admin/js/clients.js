@@ -1,7 +1,6 @@
 $(document).ready(function()
 {
     var layout_table;
-    var assigned_layout;
 
     var client_table= $('#client-table').DataTable({
                                     "processing": true,
@@ -23,72 +22,43 @@ $(document).ready(function()
                                         {"defaultContent":
                                         '<button id="update" data-toggle="modal">Aggiorna</button>' +
                                         '<button id="delete">Elimina</button>' +
-                                        '<button id="add-web-site">Aggiungi Sito Web</button>'},
+                                        '<button id="add-website">Aggiungi Sito Web</button>'},
                                     ],
 
                                 });
 
     var load_layout_table=function(){
-      var table=$('#layout-show-table').DataTable({
-          "pageLength": 5,
-            "processing": true,
-            //"serverSide": true,
-            "bDestroy": true,
-            // "bJQueryUI": true,
-            "sAjaxSource": "layout_search.php",
-            "bFilter ": true,
-            "responsive": true,
-            "aoColumns": [
+                                          var table=$('#layout-show-table').DataTable({
+                                              "pageLength": 5,
+                                                "processing": true,
+                                                //"serverSide": true,
+                                                "bDestroy": true,
+                                                // "bJQueryUI": true,
+                                                "sAjaxSource": "layout_search.php",
+                                                "bFilter ": true,
+                                                "responsive": true,
+                                                "aoColumns": [
 
-                {"mData": "ID"},
-                {"mData": "Costo Totale"},
-                {"mData": "Sviluppatore"},
-                {"mData": "Numero Moduli"},
-                {"defaultContent":
-                '<button id="add-layout">Aggiungi</button>'+
-                '<button id="show-modulo">Visualizza Moduli</button>'
-                },
+                                                    {"mData": "ID"},
+                                                    {"mData": "Costo Totale"},
+                                                    {"mData": "Sviluppatore"},
+                                                    {"mData": "Numero Moduli"},
+                                                    {"defaultContent":
+                                                    '<button id="add-layout">Aggiungi</button>'+
+                                                    '<button id="show-modulo">Visualizza Moduli</button>'
+                                                    },
 
-            ],
+                                                ],
 
-        });
-        return table;
+                                            });
+                                            return table;
     };
-
-   /* var load_current_layout_table=function(){
-        var table=  $('#current-layout-table').DataTable({
-            "pageLength": 5,
-            "processing": true,
-            //"serverSide": true,
-            "bDestroy": true,
-            // "bJQueryUI": true,
-            "sAjaxSource": "layout_assigned_search.php",
-            "bFilter ": true,
-            "responsive": true,
-            "aoColumns": [
-
-                {"mData": "ID"},
-                {"mData": "Costo Totale"},
-                {"mData": "Sviluppatore"},
-                {"mData": "Numero Moduli"},
-                {"defaultContent":
-                    '<button id="delete-layout">Elimina</button>' +
-                    '<button id="show-modulo">Visualizza Moduli</button>'},
-
-
-            ],
-
-        });
-        return table;
-    };
-
-*/
 
     $('#client-table tbody').on( 'click', '#update', function () {
         event.preventDefault();
         var rowData = client_table.rows($(this).parents('tr')).data();
         var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
-        $('#codice').val(current_data[0])
+        $('#codice').val(current_data[0]);
         $("#c_f").val(current_data[1]);
         $("#city").val(current_data[2]);
         $("#address").val(current_data[3]);
@@ -128,33 +98,47 @@ $(document).ready(function()
         client_table.ajax.reload();
     });
 
-    $('#client-table tbody').on( 'click', '#add_website', function () {
-      layout_table=load_layout_table();
+    $('#client-table tbody').on( 'click', '#add-website', function () {
+        var rowData = client_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
+        var codice=current_data[0];
+         layout_table=load_layout_table();
+         $('#codice_cliente').val(current_data[0]);
        $("#sito_web_modal").modal('show');
-
     });
 
-    $('#layout-show-table tbody').on('click', 'add-layout', function(){
-        var rowData= layout_table.rows($(this).parent('tr')).data();
-        var current_data=Object.value(rowData[0]);
-        var id_layout=current_data[0];
+    $('#layout-show-table tbody').on('click', '#add-layout', function(){
+        console.log("add-layout event-triggerd");
+        var rowData= layout_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]);
+        $('#id_layout').val(current_data[0]);
+    });
+
+    $('#add_sito_web_button').click(function(){
+        var url= $('#url_input').val();
+        var data= $('#date_input').val();
+        var codice= $('#codice_cliente').val();
+        var id_layout=$('#id_layout').val();
 
         $.ajax({
 
             type : 'POST',
-            url  : '../admin/add_layout_to_web_site.php',
-            data: {codice: codice, id_layout: id_layout},
+            url  : '../admin/add_sito_web.php',
+            data: {url: url, data: data, codice: codice, id_layout: id_layout},
             dataType: "json", // type of returned data
 
             success :  function(data)
             {
+
                 if(data.response === 0 ){
 
-                    console.log("Success delete");
 
+                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
+
+                    console.log("Success insert");
                 }
                 else if(data.response === 1){
-                    console.log("Failed delete");
+                    console.log("Failed insert");
                 }
                 else{
                     console.log("POST problem");
@@ -162,7 +146,10 @@ $(document).ready(function()
             }
         });
         client_table.ajax.reload();
-    });
+        return false;
+
+
+   });
 
 
     $('#search-field').keyup(function () {
