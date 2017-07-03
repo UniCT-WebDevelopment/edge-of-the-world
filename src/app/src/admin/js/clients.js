@@ -103,12 +103,11 @@ $(document).ready(function()
         var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
         var codice=current_data[0];
          layout_table=load_layout_table();
-         $('#codice_cliente').val(current_data[0]);
+         $('#codice_cliente').val(codice);
        $("#sito_web_modal").modal('show');
     });
 
     $('#layout-show-table tbody').on('click', '#add-layout', function(){
-        console.log("add-layout event-triggerd");
         var rowData= layout_table.rows($(this).parents('tr')).data();
         var current_data=Object.values(rowData[0]);
         $('#id_layout').val(current_data[0]);
@@ -151,6 +150,36 @@ $(document).ready(function()
 
    });
 
+    $('#layout-show-table tbody').on('click', '#show-modulo', function(){
+
+        var rowData= layout_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]);
+        var id_layout=current_data[0];
+
+        $('#modulo-table').DataTable({
+            "pageLength": 5,
+            "processing": true,
+            //"serverSide": true,
+            "bDestroy": true,
+            // "bJQueryUI": true,
+            "sAjaxSource": "load_componente.php?id_layout=" + id_layout,
+            "bFilter ": true,
+            "responsive": true,
+            "aoColumns": [
+                {"mData": "ID"},
+                {"mData": "Nome"},
+                {"mData": "Funzione"},
+                {"mData": "Costo"},
+            ],
+        });
+        $('#modulo-modal').modal('show');
+    });
+
+    $('#list-modulo').click(function(){
+        event.preventDefault();
+        $('#modulo-modal').modal('hide');
+        event.stopPropagation();
+    });
 
     $('#search-field').keyup(function () {
         client_table.search($('#search-field').val()).draw();

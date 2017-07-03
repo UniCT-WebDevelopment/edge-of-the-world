@@ -56,8 +56,6 @@ if(!isset($_SESSION['username']))
 
 <body>
 
-
-
 <div class="modal fade" id="sito_web_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -69,11 +67,53 @@ if(!isset($_SESSION['username']))
             </div>
             <div class="modal-body">
 
+                <div class="modal fade" id="modulo-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel2">Moduli presenti in questo layout</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table id="modulo-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nome</th>
+                                                <th>Funzione</th>
+                                                <th>Costo</th>
+                                            </tr>
+                                            </thead>
+                                            <tfoot>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nome</th>
+                                                <th>Funzione</th>
+                                                <th>Costo</th>
+                                            </tr>
+                                            </tfoot>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="list-modulo">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label for="codice_cliente">Codice Cliente</label>
-                            <input type="text" class="form-control " id="codice_cliente">
+                            <input type="text" class="form-control " id="codice_cliente" disabled>
                         </div>
                     </div>
                 </div>
