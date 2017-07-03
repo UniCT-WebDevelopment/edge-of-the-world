@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
     var layout_table;
+    var site_table;
 
     var client_table= $('#client-table').DataTable({
                                     "processing": true,
@@ -22,7 +23,8 @@ $(document).ready(function()
                                         {"defaultContent":
                                         '<button id="update" data-toggle="modal">Aggiorna</button>' +
                                         '<button id="delete">Elimina</button>' +
-                                        '<button id="add-website">Aggiungi Sito Web</button>'},
+                                        '<button id="add-website">Aggiungi sito web</button>'+
+                                        '<button id="show_sites">Visualizza Siti</button>'},
                                     ],
 
                                 });
@@ -53,6 +55,37 @@ $(document).ready(function()
                                             });
                                             return table;
     };
+
+    var load_sito_web=function(id_cliente){
+                                                var table=$('#site-table').DataTable({
+                                                    "processing": true,
+                                                    //"serverSide": true,
+                                                    "bDestroy": true,
+                                                    // "bJQueryUI": true,
+                                                    "sAjaxSource": "sito_web_search.php?id_cliente=" + id_cliente,
+                                                    "bFilter ": true,
+                                                    "responsive": true,
+                                                    "aoColumns": [
+
+                                                        {"mData": "Codice"},
+                                                        {"mData": "Url"},
+                                                        {"mData": "Data Pubblicazione"},
+                                                        {"mData": "Layout"},
+                                                        {"defaultContent":
+                                                        '<button id="delete-sito">Elimina</button>'},
+                                                    ],
+
+                                                  });
+                                                return table;
+    };
+
+    $('#client-table tbody').on('click', '#show_sites', function(){
+        var rowData = client_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
+        var id_cliente=current_data[0];
+        site_table=load_sito_web(id_cliente);
+        $('#list-site-modal').modal('show');
+    });
 
     $('#client-table tbody').on( 'click', '#update', function () {
         event.preventDefault();
@@ -105,6 +138,43 @@ $(document).ready(function()
          layout_table=load_layout_table();
          $('#codice_cliente').val(codice);
        $("#sito_web_modal").modal('show');
+    });
+
+    $('#site-table tbody').on('click', '#delete-sito', function(){
+        var rowData = site_table.rows($(this).parents('tr')).data();
+        var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
+        var codice=current_data[0];
+
+        $.ajax({
+
+            type : 'POST',
+            url  : '../admin/delete_sito_web.php',
+            data: {codice: codice},
+            dataType: "json", // type of returned data
+
+            success :  function(data)
+            {
+
+                if(data.response === 0 ){
+
+
+                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
+
+                    console.log("Success delete");
+                }
+                else if(data.response === 1){
+                    console.log("Failed delete");
+                }
+                else{
+                    console.log("POST problem");
+                }
+            }
+        });
+        site_table.ajax.reload();
+        client_table.ajax.reload();
+        return false;
+
+
     });
 
     $('#layout-show-table tbody').on('click', '#add-layout', function(){
