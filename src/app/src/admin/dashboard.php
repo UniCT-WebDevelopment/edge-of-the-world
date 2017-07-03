@@ -95,6 +95,9 @@ if(!isset($_SESSION['username']))
                     <li>
                         <a href="../index.php"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
+                    <li>
+                        <a href="admin_stats.php"><i class="fa fa-fw fa-home"></i>Statistiche</a>
+                    </li>
                     <!--
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
