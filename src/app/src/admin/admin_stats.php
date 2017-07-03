@@ -131,16 +131,40 @@ if(!isset($_SESSION['username']))
             </div>
 
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-md-6">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Statistiche Modulo</h3>
                         </div>
                         <div class="panel-body">
-                            <div id="morris-donut-chart"></div>
+                            <div id="modulo-donut-chart"></div>
                         </div>
                     </div>
                 </div>
+                    <div class="col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Statistiche Layout</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="layout-donut-chart"></div>
+                        </div>
+                    </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Visite Totali</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="visita-bar-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
 
 
         </div>
