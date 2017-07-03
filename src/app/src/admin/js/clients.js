@@ -1,5 +1,8 @@
 $(document).ready(function()
 {
+    var layout_table;
+    var assigned_layout;
+
     var client_table= $('#client-table').DataTable({
                                     "processing": true,
                                     //"serverSide": true,
@@ -10,6 +13,7 @@ $(document).ready(function()
                                     "responsive": true,
                                     "aoColumns": [
 
+                                        {"mData": "Codice"},
                                         {"mData": "Codice_fiscale"},
                                         {"mData": "Citta"},
                                         {"mData": "Indirizzo"},
@@ -19,7 +23,7 @@ $(document).ready(function()
                                         {"defaultContent":
                                         '<button id="update" data-toggle="modal">Aggiorna</button>' +
                                         '<button id="delete">Elimina</button>' +
-                                        '<button id="manage-layout">Aggiungi Sito Web</button>'},
+                                        '<button id="add-web-site">Aggiungi Sito Web</button>'},
                                     ],
 
                                 });
@@ -84,13 +88,13 @@ $(document).ready(function()
         event.preventDefault();
         var rowData = client_table.rows($(this).parents('tr')).data();
         var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
-        $("#c_f").val(current_data[0]);
-        $("#city").val(current_data[1]);
-        $("#address").val(current_data[2]);
-        $("#tel_number").val(current_data[3]);
-        $("#n_sites").val(current_data[4]);
-        $("#total_cost").val(current_data[5]);
+        $('#codice').val(current_data[0])
+        $("#c_f").val(current_data[1]);
+        $("#city").val(current_data[2]);
+        $("#address").val(current_data[3]);
+        $("#tel_number").val(current_data[4]);
         $("#update-modal").modal('show');
+
     });
 
 
@@ -98,12 +102,12 @@ $(document).ready(function()
         event.preventDefault();
         var rowData = client_table.rows($(this).parents('tr')).data();
         var current_data=Object.values(rowData[0]); //devo convertire l'oggetto in array prima di accedere
-        var c_f=current_data[0];
+        var codice=current_data[0];
         $.ajax({
 
             type : 'POST',
             url  : '../admin/delete_cliente.php',
-            data: {c_f: c_f,},
+            data: {codice: codice},
             dataType: "json", // type of returned data
 
             success :  function(data)
@@ -124,12 +128,40 @@ $(document).ready(function()
         client_table.ajax.reload();
     });
 
-    $('#client-table tbody').on( 'click', '#manage-layout', function () {
-      var layout_table=load_layout_table();
+    $('#client-table tbody').on( 'click', '#add_website', function () {
+      layout_table=load_layout_table();
        $("#sito_web_modal").modal('show');
 
+    });
 
+    $('#layout-show-table tbody').on('click', 'add-layout', function(){
+        var rowData= layout_table.rows($(this).parent('tr')).data();
+        var current_data=Object.value(rowData[0]);
+        var id_layout=current_data[0];
 
+        $.ajax({
+
+            type : 'POST',
+            url  : '../admin/add_layout_to_web_site.php',
+            data: {codice: codice, id_layout: id_layout},
+            dataType: "json", // type of returned data
+
+            success :  function(data)
+            {
+                if(data.response === 0 ){
+
+                    console.log("Success delete");
+
+                }
+                else if(data.response === 1){
+                    console.log("Failed delete");
+                }
+                else{
+                    console.log("POST problem");
+                }
+            }
+        });
+        client_table.ajax.reload();
     });
 
 
@@ -144,14 +176,12 @@ $(document).ready(function()
         var city=$("#city_new").val();
         var address=$("#address_new").val();
         var tel_number=$("#tel_number_new").val();
-        var n_siti=$("#n_sites_new").val();
-        var total_cost=$("#total_cost_new").val();
 
         $.ajax({
 
             type : 'POST',
             url  : '../admin/insert_cliente.php',
-            data: {c_f: c_f, city: city, address: address, tel_number: tel_number, n_siti: n_siti, total_cost: total_cost},
+            data: {c_f: c_f, city: city, address: address, tel_number: tel_number},
             dataType: "json", // type of returned data
 
             success :  function(data)
@@ -163,12 +193,6 @@ $(document).ready(function()
                     //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
 
                  console.log("Success insert");
-                    $("#c_f_new").reset();
-                    $("#city_new").reset();
-                    $("#address_new").reset();
-                    $("#tel_number_new").reset();
-                    $("#n_sites_new").reset();
-                    $("#total_cost_new").reset();
                 }
                 else if(data.response === 1){
                     console.log("Failed insert");
@@ -185,18 +209,15 @@ $(document).ready(function()
 
     $('#update-modal-save').click(function(){
 
-        var c_f=$("#c_f").val();
+        var codice=$('#codice').val();
         var city=$("#city").val();
         var address=$("#address").val();
         var tel_number=$("#tel_number").val();
-        var n_siti=$("#n_sites").val();
-        var total_cost=$("#total_cost").val();
-
         $.ajax({
 
             type : 'POST',
             url  : '../admin/update_cliente.php',
-            data: {c_f: c_f, city: city, address: address, tel_number: tel_number, n_siti: n_siti, total_cost: total_cost},
+            data: {codice: codice, city: city, address: address, tel_number: tel_number},
             dataType: "json", // type of returned data
 
             success :  function(data)
@@ -217,10 +238,5 @@ $(document).ready(function()
         client_table.ajax.reload();
         return false;
     });
-
-
-
-
-
 
 });

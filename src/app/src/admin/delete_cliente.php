@@ -14,11 +14,11 @@ if( mysqli_connect_error()){
     die("Database connection failed: ".mysqli_connect_error());
 }
 
-$c_f= mysqli_real_escape_string($db_conn,$_POST['c_f']);
+$codice=(int)($_POST['codice']);
 
-if(isset($c_f)) {
+if(isset($codice)) {
 
-  $return_value = mysqli_query($db_conn, "DELETE FROM CLIENTE WHERE CODICE_FISCALE = '$c_f' ") or die(mysqli_error($db_conn));
+  $return_value = mysqli_query($db_conn, "DELETE FROM CLIENTE WHERE CODICE = '$codice' ") or die(mysqli_error($db_conn));
 
    if($return_value){
 

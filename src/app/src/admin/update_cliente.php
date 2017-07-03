@@ -15,18 +15,16 @@ if( mysqli_connect_error()){
     echo "error";
 }
 
-$c_f= mysqli_real_escape_string($db_conn,$_POST['c_f']);
+$codice=(int)($_POST['codice']);
 $city=mysqli_real_escape_string($db_conn,$_POST['city']);
 $address=mysqli_real_escape_string($db_conn,$_POST['address']);
 $tel_number=mysqli_real_escape_string($db_conn,$_POST['tel_number']);
-$n_siti=(int)$_POST["n_siti"];
-$total_cost=(int)$_POST["total_cost"];
 
-if(isset($c_f) && isset($city) && isset($address) && isset($tel_number) && isset($n_siti) && isset($total_cost)) {
+if(isset($codice) && isset($city) && isset($address) && isset($tel_number)) {
 
   $return_value = mysqli_query($db_conn, "UPDATE CLIENTE
-                                                SET CITTA = '$city', INDIRIZZO = '$address', TELEFONO = '$tel_number', N_SITI = '$n_siti', SPESA_TOTALE = '$total_cost'
-                                                WHERE CODICE_FISCALE = '$c_f'") or die(mysqli_error($db_conn));
+                                                SET CITTA = '$city', INDIRIZZO = '$address', TELEFONO = '$tel_number'
+                                                WHERE CODICE = '$codice'") or die(mysqli_error($db_conn));
 
   //TODO il codice fiscale non deve essere modificato in quanto chiave unique per l'update. Le due possibili soluzioni sono:
     //Rendere il codice fiscale non editabile

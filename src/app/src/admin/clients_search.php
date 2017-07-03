@@ -24,6 +24,7 @@ $res = array();
 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 {
     $res[] = array(
+        'Codice' => $row['CODICE'],
         'Codice_fiscale'=> $row['CODICE_FISCALE'],
         'Citta' => $row['CITTA'],
         'Indirizzo' => $row['INDIRIZZO'],

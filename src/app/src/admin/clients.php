@@ -125,6 +125,8 @@ if(!isset($_SESSION['username']))
                                 <th>Options</th>
                             </tr>
                             </tfoot>
+                            <tbody>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -156,6 +158,8 @@ if(!isset($_SESSION['username']))
                                 <th>Options</th>
                             </tr>
                             </tfoot>
+                            <tbody>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -178,8 +182,12 @@ if(!isset($_SESSION['username']))
             </div>
             <div class="modal-body">
                 <div class="form-group">
+                    <label for="codice">Codice</label>
+                    <input class="form-control" id="codice" disabled>
+                </div>
+                <div class="form-group">
                     <label for="c-f">C.F.</label>
-                    <input class="form-control" id="c_f">
+                    <input class="form-control" id="c_f" disabled>
                 </div>
                 <div class="form-group">
                     <label for="city">Città</label>
@@ -192,14 +200,6 @@ if(!isset($_SESSION['username']))
                 <div class="form-group">
                     <label for="tel_number">Telefono</label>
                     <input class="form-control" id="tel_number">
-                </div>
-                <div class="form-group">
-                    <label for="n_sites">Numero Siti</label>
-                    <input class="form-control" id="n_sites">
-                </div>
-                <div class="form-group">
-                    <label for="total_cost">Spesa Totale</label>
-                    <input class="form-control" id="total_cost">
                 </div>
             </div>
             <div class="modal-footer">
@@ -297,6 +297,7 @@ if(!isset($_SESSION['username']))
                             <table id="client-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
+                                    <th>Codice</th>
                                     <th>C.F.</th>
                                     <th>Città</th>
                                     <th>Indirizzo</th>
@@ -308,6 +309,7 @@ if(!isset($_SESSION['username']))
                                 </thead>
                                 <tfoot>
                                 <tr>
+                                    <th>Codice</th>
                                     <th>C.F.</th>
                                     <th>Città</th>
                                     <th>Indirizzo</th>
@@ -317,6 +319,8 @@ if(!isset($_SESSION['username']))
                                     <th>Options</th>
                                 </tr>
                                 </tfoot>
+                                <tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -352,14 +356,6 @@ if(!isset($_SESSION['username']))
                     <div class="form-group">
                         <label for="tel_number">Telefono</label>
                         <input type="text" class="form-control" placeholder="Telefono" id="tel_number_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="n_sites">Numero Siti</label>
-                        <input type="number" class="form-control" placeholder="Numero Siti" id="n_sites_new">
-                    </div>
-                    <div class="form-group">
-                        <label for="total_cost">Spesa Totale</label>
-                        <input type="number" class="form-control" placeholder="Spesa Totale" id="total_cost_new">
                     </div>
                     </form>
                 </div>
