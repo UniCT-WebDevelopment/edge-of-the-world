@@ -134,4 +134,28 @@ begin
     where ID=OLD.ID_LAYOUT;
 end //
 
+delimiter //
+create trigger add_sito
+after insert
+on SITO_WEB
+for each row
+begin
+    update CLIENTE
+    set N_SITI=N_SITI+1
+    where CODICE=NEW.CLIENTE;
+end //
+
+delimiter //
+create trigger add_sito
+after delete
+on SITO_WEB
+for each row
+begin
+    update CLIENTE
+    set N_SITI=N_SITI-1
+    where CODICE=OLD.CLIENTE;
+end //
+
 delimiter ;
+
+
