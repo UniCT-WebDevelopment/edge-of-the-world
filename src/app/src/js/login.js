@@ -21,7 +21,6 @@ $('document').ready(function()
             {
                 console.log("try");
                 if(data.response === 1 ){
-
                     window.location.replace(data.url);
                 }
                 else{

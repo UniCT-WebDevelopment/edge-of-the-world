@@ -18,7 +18,13 @@ create view NUMERO_VISITE_PER_SITO as
     from SITO_WEB join VISITA
     on(SITO_WEB.CODICE=VISITA.SITO)
     group by SITO_WEB.CODICE;
+    
+    
+insert into SITO_WEB (CODICE, URL, DATA_PUBBLICAZIONE, CLIENTE, LAYOUT) values (6, "www.misticanza.com", "2013-12-31", 3, 2);
 
+insert into SITO_WEB (CODICE, URL, DATA_PUBBLICAZIONE, CLIENTE, LAYOUT) values (9, "www.techtipscom", "2013-10-08", 4, 1);
+
+insert into SITO_WEB (CODICE, URL, DATA_PUBBLICAZIONE, CLIENTE, LAYOUT) values (10, "www.larosadeldeserto.it", "2013-11-14", 4, 1);
 
 insert into VISITATORE (IP, DATA) values ("107.89.105.68", "2015-02-08");
 

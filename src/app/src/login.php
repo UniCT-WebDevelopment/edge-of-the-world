@@ -18,17 +18,28 @@ $username = htmlspecialchars($_GET['username'],ENT_QUOTES);
 $password = $_GET['password'];
 
 
-$result = mysqli_query($db_conn, "SELECT * FROM UTENTE WHERE username = '".$_GET['username']."'")or die(mysqli_error());
+$result = mysqli_query($db_conn, "SELECT * FROM UTENTE WHERE USERNAME = '".$_GET['username']."'")or die(mysqli_error($db_conn));
 
 
 if( mysqli_num_rows($result) != 0){
 
-    $row= mysqli_fetch_row($result);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-    if(strcmp($row[2], $password) == 0){
-        $_SESSION['username'] = $row[0];
+    if(strcmp($row['PASSWORD'], $password) == 0){
+        $_SESSION['username'] = $row['USERNAME'];
         $ret['response'] = 1;
-        $ret['url'] = 'admin/dashboard.php';
+
+        if(strcmp($row['TYPE'], "admin")==0){
+            $ret['url'] = 'admin/dashboard.php';
+        }
+        else if(strcmp($row['TYPE'], "developer")==0){
+            $ret['url'] = 'developer/developer_page.php';
+        }
+        else{
+            $ret['url'] = 'cliente/cliente_page.php';
+        }
+        $ret['nome'] = $row['NOME'];
+        $ret['cognome'] = $row['COGNOME'];
     }
     else{
         $ret['response'] = 0;
