@@ -37,7 +37,7 @@ if(!isset($_SESSION['username']))
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/stats.css">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.css"/>
@@ -181,7 +181,7 @@ if(!isset($_SESSION['username']))
             </div>
                 <div class="row">
                     <div class="col-md-3">
-                        <button class="btn btn-info btn-block" id="visite-generali">Geneali</button>
+                        <button class="btn btn-primary btn-block" id="visite-generali">Geneali</button>
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-info btn-block" id="ultimo-mese">Ultimo mese</button>

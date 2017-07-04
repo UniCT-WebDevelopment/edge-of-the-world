@@ -57,12 +57,7 @@ $(document).ready(function () {
                     xkey: 'url',
                     ykeys: ['n_visite'],
                     labels: ['Numero Visite'],
-                    barColors: function (row, series, type) {
-                        if (row.y < 4 && row.y > 2) return ['yellow'];
-                        else if (row.y <= 2) return ['red'];
-                        else return ['green'];
-
-                    },
+                    barColors: ['dodgerblue'],
 
                 });
             },
@@ -98,12 +93,7 @@ $(document).ready(function () {
                     xkey:'url',
                     ykeys:['n_visite'],
                     labels:['Numero Visite'],
-                    barColors:  function(row, series, type) {
-                        if(row.y < 4 && row.y >2) return ['yellow'];
-                        else if(row.y <= 2) return ['red'];
-                        else return['green'];
-
-                    },
+                    barColors:  ['orangered']
                 });
             },
             error: function () {
@@ -129,12 +119,7 @@ $(document).ready(function () {
                     xkey:'url',
                     ykeys:['n_visite'],
                     labels:['Numero Visite'],
-                    barColors:  function(row, series, type) {
-                        if(row.y < 4 && row.y >2) return ['yellow'];
-                        else if(row.y <= 2) return ['red'];
-                        else return['green'];
-
-                    },
+                    barColors: ['forestgreen']
                 });
             },
             error: function () {
@@ -169,12 +154,7 @@ $(document).ready(function () {
                     xkey:'url',
                     ykeys:['n_visite'],
                     labels:['Numero Visite'],
-                    barColors:  function(row, series, type) {
-                        if(row.y < 4 && row.y >2) return ['yellow'];
-                        else if(row.y <= 2) return ['red'];
-                        else return['green'];
-
-                    },
+                    barColors: ['yellow']
                 });
             },
             error: function () {
