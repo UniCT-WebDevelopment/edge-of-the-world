@@ -84,6 +84,27 @@ create table UTENTE(
 )Engine='InnoDB';
     
     
+create Table UTENTE_CLIENTE(
+    ID_CLIENTE INTEGER,
+    ID_UTENTE INTEGER,
+    INDEX new_cliente1(ID_CLIENTE),
+	INDEX new_utente(ID_UTENTE),
+    FOREIGN KEY (ID_CLIENTE) REFERENCES CLIENTE(CODICE),
+    FOREIGN KEY (ID_UTENTE) REFERENCES UTENTE(ID_UTENTE),
+    PRIMARY KEY(ID_CLIENTE, ID_UTENTE)
+)Engine='InnoDB';
+    
+create Table UTENTE_SVILUPPATORE(
+    PIVA varchar(10),
+    ID_UTENTE INTEGER,
+    INDEX new_sviluppatore1(PIVA),
+	INDEX new_utente1(ID_UTENTE),
+    FOREIGN KEY (PIVA) REFERENCES SVILUPPATORE(PIVA),
+    FOREIGN KEY (ID_UTENTE) REFERENCES UTENTE(ID_UTENTE),
+    PRIMARY KEY(PIVA, ID_UTENTE)
+)Engine='InnoDB';
+    
+    
 delimiter //
 create trigger add_componente
 after insert
@@ -165,7 +186,7 @@ create view NUMERO_VISITE_PER_SITO as
 
 insert into UTENTE (USERNAME, PASSWORD, NOME, COGNOME, TYPE) values ("alex", "83d97b71499bee6b9d42dee9d3a6e5d00ecc8c891346d25d1909b3aac9abaa0ad4864fe4eacf159cd3f4a0ad764178d014ac378dfffc5e4023f6dbcfb0992648", "Alex", "Pitrolo", "admin");
 
-insert into UTENTE (USERNAME, PASSWORD, NOME, COGNOME, TYPE) values ("giovanni", "83833733fa80970ed63971615324b93fdc2161a339f727eb6c8b59cb173c932e253479cebfdcd063af50f9a7e95515fe8846252278e24c11b67de3ff6a5ea880", "Giovanni", "Storti", "developer");
+insert into UTENTE (USERNAME, PASSWORD, NOME, COGNOME, TYPE) values ("angelo", "9aae6fe70ba8504c6c3a90e0157ae9d3eb61e10d23104f01d3dc78acda9752802ac853a5d10b8c61d795a08fe49b6528b4cb20a5b2958214f2f04ae5435bb70e", "Angelo", "Cassano", "developer");
 
 insert into UTENTE (USERNAME, PASSWORD, NOME, COGNOME, TYPE) values ("flavio", "130fd4b2b4e99a66f00a277c40c9997694d8d366800441015297f73a61c4292564232edacce6d78aa98532055557077781480f501752b070a823c485a68104b9", "Flavio", "Romano", "cliente");
 
@@ -184,6 +205,11 @@ insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567890", "G
 insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567891", "Angelo", "Cassano", "3382751678");
 
 insert into SVILUPPATORE(PIVA, NOME, COGNOME, TELEFONO) values ("1234567892", "Marco", "Loggia", "3314567999");
+
+
+insert into UTENTE_CLIENTE (ID_CLIENTE, ID_UTENTE) values (3,3);
+
+insert into UTENTE_SVILUPPATORE (PIVA, ID_UTENTE) values ("1234567891",2);
 
 
 insert into LAYOUT (COSTO_TOTALE, SVILUPPATORE) values (0, 1234567890);

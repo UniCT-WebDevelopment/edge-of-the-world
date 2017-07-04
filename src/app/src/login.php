@@ -27,6 +27,7 @@ if( mysqli_num_rows($result) != 0){
 
     if(strcmp($row['PASSWORD'], $password) == 0){
         $_SESSION['username'] = $row['USERNAME'];
+        $_SESSION['type'] = $row['TYPE'];
         $ret['response'] = 1;
 
         if(strcmp($row['TYPE'], "admin")==0){

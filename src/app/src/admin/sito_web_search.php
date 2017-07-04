@@ -18,6 +18,7 @@ if( mysqli_connect_error()){
 
 $id_cliente=(int)($_GET['id_cliente']);
 
+
 if(isset($id_cliente)){
 $result= mysqli_query($db_conn, "SELECT * FROM SITO_WEB WHERE CLIENTE='$id_cliente'");
 
