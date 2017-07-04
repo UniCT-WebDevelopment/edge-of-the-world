@@ -20,9 +20,9 @@ $(document).ready(function()
                                         {"mData": "Sviluppatore"},
                                         {"mData": "Numero Moduli"},
                                         {"defaultContent":
-                                        '<button id="add-developer">Aggiungi Sviluppatore</button>'+
-                                        '<button id="show_module">Visualizza Moduli</button>' +
-                                        '<button id="delete">Elimina</button>'},
+                                        '<button id="add-developer" class="btn btn-primary">Aggiungi Sviluppatore</button>'+
+                                        '<button id="show_module" class="btn btn-success">Visualizza Moduli</button>' +
+                                        '<button id="delete" class="btn btn-danger">Elimina</button>'},
 
                                     ],
 
@@ -45,7 +45,7 @@ $(document).ready(function()
                                                     {"mData": "Funzione"},
                                                     {"mData": "Costo"},
                                                     {"defaultContent":
-                                                        '<button id="add-button">Aggiungi</button>' },
+                                                        '<button id="add-button" class="btn btn-primary">Aggiungi</button>' },
 
                                                 ],
                                             });
@@ -70,7 +70,7 @@ $(document).ready(function()
                                                                 {"mData": "Funzione"},
                                                                 {"mData": "Costo"},
                                                                 {"defaultContent":
-                                                                '<button id="elimina-button">Elimina</button>' },
+                                                                '<button id="elimina-button" class="btn btn-danger">Elimina</button>' },
                                                             ],
                                                         });
                                                         return table;
@@ -92,7 +92,7 @@ $(document).ready(function()
                                                     {"mData": "Cognome"},
                                                     {"mData": "Telefono"},
                                                     {
-                                                        "defaultContent": '<button id="add-developer">Aggiungi</button>'
+                                                        "defaultContent": '<button id="add-developer" class="btn btn-primary">Aggiungi</button>'
                                                     },
                                                 ],
                                             });
@@ -116,7 +116,7 @@ $(document).ready(function()
                                                                         {"mData": "Cognome"},
                                                                         {"mData": "Telefono"},
                                                                         {"defaultContent":
-                                                                            '<button id="delete-developer">Elimina</button>' },
+                                                                            '<button id="delete-developer" class="btn btn-danger">Elimina</button>' },
                                                                     ],
                                                                 });
                                                                 return table;

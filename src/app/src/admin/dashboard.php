@@ -19,7 +19,7 @@ if(!isset($_SESSION['username']))
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Dashboard Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -96,7 +96,7 @@ if(!isset($_SESSION['username']))
                         <a href="../index.php"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a href="admin_stats.php"><i class="fa fa-fw fa-home"></i>Statistiche</a>
+                        <a href="admin_stats.php"><i class="fa fa-fw fa-line-chart"></i> Statistiche</a>
                     </li>
                     <!--
                     <li>

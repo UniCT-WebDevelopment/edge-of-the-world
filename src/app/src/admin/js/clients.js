@@ -21,10 +21,10 @@ $(document).ready(function()
                                         {"mData": "N_siti"},
                                         {"mData": "Spesa"},
                                         {"defaultContent":
-                                        '<button id="update" class="btn btn-primary" data-toggle="modal">Aggiorna</button>' +
-                                        '<button id="delete" class="btn btn-warning">Elimina</button>' +
+                                        '<button id="update" class="btn btn-warning" data-toggle="modal">Aggiorna</button>' +
                                         '<button id="add-website" class="btn btn-primary">Aggiungi sito web</button>'+
-                                        '<button id="show_sites" class="btn btn-primary">Visualizza Siti</button>'},
+                                        '<button id="show_sites" class="btn btn-success">Visualizza Siti</button>'+
+                                        '<button id="delete" class="btn btn-danger">Elimina</button>'},
                                     ],
 
                                 });
@@ -47,7 +47,7 @@ $(document).ready(function()
                                                     {"mData": "Numero Moduli"},
                                                     {"defaultContent":
                                                     '<button id="add-layout" class="btn btn-primary">Aggiungi</button>'+
-                                                    '<button id="show-modulo"class="btn btn-primary">Visualizza Moduli</button>'
+                                                    '<button id="show-modulo"class="btn btn-success">Visualizza Moduli</button>'
                                                     },
 
                                                 ],
@@ -72,7 +72,7 @@ $(document).ready(function()
                                                         {"mData": "Data Pubblicazione"},
                                                         {"mData": "Layout"},
                                                         {"defaultContent":
-                                                        '<button id="delete-sito" class="btn btn-warning">Elimina</button>'},
+                                                        '<button id="delete-sito" class="btn btn-danger">Elimina</button>'},
                                                     ],
 
                                                   });

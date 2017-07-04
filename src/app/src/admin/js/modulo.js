@@ -15,8 +15,8 @@ $(document).ready(function()
                                         {"mData": "Funzione"},
                                         {"mData": "Costo"},
                                         {"defaultContent":
-                                        '<button id="update" data-toggle="modal">Aggiorna</button>' +
-                                        '<button id="delete">Elimina</button>'},
+                                        '<button id="update" data-toggle="modal" class="btn btn-primary">Aggiorna</button>' +
+                                        '<button id="delete" class="btn btn-danger">Elimina</button>'},
                                     ],
 
                                 });

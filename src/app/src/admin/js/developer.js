@@ -15,8 +15,8 @@ $(document).ready(function()
                                         {"mData": "Cognome"},
                                         {"mData": "Telefono"},
                                         {"defaultContent":
-                                        '<button id="update" data-toggle="modal">Aggiorna</button>' +
-                                        '<button id="delete">Elimina</button>'},
+                                        '<button id="update" data-toggle="modal" class="btn btn-warning">Aggiorna</button>' +
+                                        '<button id="delete" class="btn btn-danger">Elimina</button>'},
                                     ],
 
                                 });
