@@ -14,7 +14,7 @@ create view NUMERO_UTILIZZO_LAYOUT as
     
     
 create view NUMERO_VISITE_PER_SITO as
-    select SITO_WEB.URL, count(*) as NUMERO_VISITE_PER_SITO
+    select SITO_WEB.CODICE, SITO_WEB.URL, count(*) as NUMERO_VISITE_PER_SITO
     from SITO_WEB join VISITA
     on(SITO_WEB.CODICE=VISITA.SITO)
     group by SITO_WEB.CODICE;
@@ -40,6 +40,12 @@ insert into VISITATORE (IP, DATA) values ("102.4.10.32", "2016-01-01");
 
 insert into VISITATORE (IP, DATA) values ("131.54.123.33", "2017-02-04");
 
+insert into VISITATORE (IP, DATA) values ("134.55.67.123", "2017-06-20");
+
+insert into VISITATORE (IP, DATA) values ("67.89.123.2", "2017-06-30");
+
+insert into VISITATORE (IP, DATA) values ("115.21.32.123", "2017-06-29");
+
 
 insert into VISITA (IP, DATA, SITO) values ("107.89.105.68", "2015-02-08", 6);
 
@@ -60,3 +66,9 @@ insert into VISITA (IP, DATA, SITO) values ("123.67.3.4", "2014-02-04", 10);
 insert into VISITA (IP, DATA, SITO) values ("102.4.10.32", "2016-01-01", 10);
 
 insert into VISITA (IP, DATA, SITO) values ("131.54.123.33", "2017-02-04", 10);
+
+insert into VISITA (IP, DATA , SITO) values ("134.55.67.123", "2017-06-20", 6);
+
+insert into VISITA (IP, DATA ,SITO) values ("67.89.123.2", "2017-06-30", 10);
+
+insert into VISITA (IP, DATA,SITO) values ("115.21.32.123", "2017-06-29", 9);
