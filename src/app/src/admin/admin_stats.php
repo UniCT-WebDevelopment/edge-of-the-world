@@ -57,6 +57,34 @@ if(!isset($_SESSION['username']))
 
 <body>
 
+<div id="time-interval" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ricerca Avanzata</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="from">Dal</label>
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="from">
+                </div>
+                <div class="form-group">
+                    <label for="to">Al</label>
+                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" id="to">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="modal-close">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="search-interval">Ricerca</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <div id="wrapper">
 
     <!-- Navigation -->
@@ -134,7 +162,7 @@ if(!isset($_SESSION['username']))
                 <div class="col-md-6">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Statistiche Modulo</h3>
+                            <h3 class="panel-title"><i class="fa fa-pie-chart"></i> Statistiche Modulo</h3>
                         </div>
                         <div class="panel-body">
                             <div id="modulo-donut-chart"></div>
@@ -144,7 +172,7 @@ if(!isset($_SESSION['username']))
                     <div class="col-md-6">
                     <div class="panel panel-yellow">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Statistiche Layout</h3>
+                            <h3 class="panel-title"><i class="fa fa-pie-chart"></i> Statistiche Layout</h3>
                         </div>
                         <div class="panel-body">
                             <div id="layout-donut-chart"></div>
@@ -152,10 +180,25 @@ if(!isset($_SESSION['username']))
                     </div>
             </div>
                 <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" id="visite-generali">Geneali</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" id="ultimo-mese">Ultimo mese</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" id="ultimo-anno">Ultimo anno</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-info btn-block" id="ricerca-avanzata">Ricerca Avanzata</button>
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-yellow">
+                        <div class="panel panel-info">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i>Visite Totali</h3>
+                                <h3 class="panel-title"><i class="fa fa-bar-chart" id="bar-chart-title"></i> Visite Totali</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="visita-bar-chart"></div>
