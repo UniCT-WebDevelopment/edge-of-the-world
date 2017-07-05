@@ -3,7 +3,7 @@ require('db.php');
 session_start();
 
 
-if(!$_SESSION['type']!= "admin")
+if($_SESSION['type']!= "admin")
 {
     die("Acceso negato");
 }

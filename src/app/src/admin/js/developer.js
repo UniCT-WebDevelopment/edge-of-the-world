@@ -60,7 +60,7 @@ $(document).ready(function()
         $.ajax({
 
             type : 'POST',
-            url  : '../admin/delete_assigned_developer.php',
+            url  : '../admin/delete_developer.php',
             data: {piva: piva},
             dataType: "json", // type of returned data
 
