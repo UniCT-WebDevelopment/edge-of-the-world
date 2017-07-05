@@ -106,7 +106,7 @@ else{
                                 <div class="row" id="private-panel">
                                     <?php if(strcmp($_SESSION['type'], "admin")===0) : ?>
                                     <div class="col-md-12 private-link">
-                                        <a href="./admin/dashboard.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
+                                        <a href="./admin/riepilogo.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
                                     </div>
                                     <?php elseif(strcmp($_SESSION['type'], "cliente")===0) : ?>
                                     <div class="col-md-12 private-link">

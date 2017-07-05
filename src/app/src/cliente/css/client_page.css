@@ -1,3 +1,15 @@
 #site-table{
     color:black;
 }
+
+#site-table_filter{
+    display:none;
+}
+
+#modulo-table{
+    color: black;
+}
+
+#layout-details{
+    color:black;
+}

@@ -26,7 +26,7 @@ if( mysqli_num_rows($result) != 0){
         $ret['response'] = 1;
 
         if(strcmp($row['TYPE'], "admin")==0){
-            $ret['url'] = 'admin/dashboard.php';
+            $ret['url'] = 'admin/riepilogo.php';
         }
         else if(strcmp($row['TYPE'], "developer")==0){
             $ret['url'] = 'developer/developer_page.php';

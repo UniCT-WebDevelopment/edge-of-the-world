@@ -27,9 +27,16 @@ $(document).ready(function() {
                 {"mData": "Url"},
                 {"mData": "Data Pubblicazione"},
                 {"mData": "Layout"},
+                {"defaultContent":
+                    '<button id="detail-button" class="btn btn-success">Dettagli Layout</button>'},
             ],
 
         });
+
+    $('#search-field').keyup(function () {
+        sito_table.search($('#search-field').val()).draw();
+
+    });
 
         var load_general_visita_chart=function() {
         $.ajax({
@@ -152,5 +159,55 @@ $(document).ready(function() {
         });
 
     });
+
+    var load_modulo_table = function(id_layout){
+        var table= $('#modulo-table').DataTable({
+            "processing": true,
+            //"serverSide": true,
+            "bDestroy": true,
+            // "bJQueryUI": true,
+            "sAjaxSource": "load_componente.php?id_layout=" + id_layout,
+            "bFilter ": true,
+            "responsive": true,
+            "aoColumns": [
+                {"mData": "ID"},
+                {"mData": "Nome"},
+                {"mData": "Funzione"},
+                {"mData": "Costo"},
+            ],
+        });
+        return table;
+    };
+
+    var load_layout_info= function(id_layout){
+        $.ajax({
+
+            type : 'POST',
+            url  : '../cliente/load_layout_info.php',
+            data: {id_layout: id_layout},
+            dataType: "json", // type of returned data
+
+            success :  function(data)
+            {
+                $('#id_layout').val(id_layout);
+                $('#costo-totale').val(data.costo);
+            },
+            error: function () {
+                alert("Error loading data! Please try again.");
+            }
+        });
+
+
+    }
+
+    $('#site-table tbody').on('click', '#detail-button', function(){
+        var layoutData = sito_table.rows($(this).parents('tr')).data();
+        var current_layout=Object.values(layoutData[0]);
+        var id_layout=current_layout[3];
+        load_modulo_table(id_layout);
+        load_layout_info(id_layout);
+        $('#layout-details').modal('show');
+    });
+
 
 });

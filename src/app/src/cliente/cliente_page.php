@@ -53,6 +53,68 @@ if($_SESSION['type']!= "cliente")
 
 <body>
 
+<div class="modal fade" id="layout-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dettagli Layout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="id_layout">ID Layout</label>
+                    <input type="text" class="form-control" id="id_layout" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="costo-totale">Costo Totale</label>
+                    <input type="text" class="form-control" id="costo-totale" disabled>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                <small>Moduli</small>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+
+                <table id="modulo-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Funzione</th>
+                        <th>Costo</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Funzione</th>
+                        <th>Costo</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="close-list-site">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="time-interval" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -102,16 +164,6 @@ if($_SESSION['type']!= "cliente")
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="username"></i><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
                         <a href="../logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
                 </ul>
@@ -133,6 +185,23 @@ if($_SESSION['type']!= "cliente")
 
     <div id="page-wrapper">
 
+
+        <div class="container-fluid" id="content-panel">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        <small>Riepilogo</small>
+                    </h1>
+                </div>
+            </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <input type="text" class="form-control" placeholder="Cerca" id="search-field">
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col-md-12">
                 <table id="site-table" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -142,6 +211,7 @@ if($_SESSION['type']!= "cliente")
                         <th>Url</th>
                         <th>Data Pubblicazione</th>
                         <th>Layout</th>
+                        <th>Options</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -150,6 +220,7 @@ if($_SESSION['type']!= "cliente")
                         <th>Url</th>
                         <th>Data Pubblicazione</th>
                         <th>Layout</th>
+                        <th>Options</th>
                     </tr>
                     </tfoot>
                     <tbody>
