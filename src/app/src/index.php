@@ -101,9 +101,19 @@ else{
                                 </div>
                                 <?php else : ?>
                                 <div class="row" id="private-panel">
+                                    <?php if(strcmp($_SESSION['type'], "admin")===0) : ?>
                                     <div class="col-md-12 private-link">
                                         <a href="./admin/dashboard.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
                                     </div>
+                                    <?php elseif(strcmp($_SESSION['type'], "cliente")===0) : ?>
+                                    <div class="col-md-12 private-link">
+                                        <a href="./cliente/cliente_page.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
+                                    </div>
+                                    <?php elseif(strcmp($_SESSION['type'], "developer")===0) : ?>
+                                    <div class="col-md-12 private-link">
+                                        <a href="./developer/developer_page.php"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a>
+                                    </div>
+                                    <?php endif; ?>
                                     <div class="col-md-12 private-link">
                                     <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Logout</a>
                                     </div>

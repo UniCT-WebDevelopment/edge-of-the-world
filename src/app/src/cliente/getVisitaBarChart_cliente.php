@@ -3,7 +3,7 @@ require('db.php');
 
 session_start();
 
-if(!isset($_SESSION['username']))
+if($_SESSION['type']!= "cliente")
 {
     die("Acceso negato");
 }
@@ -16,13 +16,22 @@ if( mysqli_connect_error()){
 }
 
 $type=mysqli_real_escape_string($db_conn, $_POST['type']);
-$id_cliente=(int)($_POST['id_cliente']);
 $begin=mysqli_real_escape_string($db_conn, $_POST['begin']);
 $end=mysqli_real_escape_string($db_conn, $_POST['end']);
+$username= $_SESSION['username'];
 
 
-if(isset($type) && isset($id_cliente)){
-    if(strcmp($type, "month")==0){
+if(isset($type)){
+    $result= mysqli_query($db_conn, "SELECT ID_CLIENTE from UTENTE_CLIENTE join UTENTE
+                                           ON(UTENTE_CLIENTE. ID_UTENTE = UTENTE.ID_UTENTE)
+                                           WHERE UTENTE.USERNAME= '$username'");
+
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+    $id_cliente=$row['ID_CLIENTE'];
+
+
+    if(strcmp($type, "month")===0){
 
                     $result= mysqli_query($db_conn, "SELECT CODICE, URL, count(*) as NUMERO_VISITE_PER_SITO 
                                                             FROM SITO_WEB join VISITA
@@ -53,7 +62,7 @@ if(isset($type) && isset($id_cliente)){
                     echo $json;
     }
 
-    else if(strcmp($type, "general")==0){
+    else if(strcmp($type, "general")===0){
 
                     $result = mysqli_query($db_conn, "SELECT CODICE, URL, count(*) as NUMERO_VISITE_PER_SITO 
                                                             FROM SITO_WEB join VISITA
@@ -81,7 +90,7 @@ if(isset($type) && isset($id_cliente)){
                     echo $json;
 
     }
-    else if(strcmp($type, "year")==0){
+    else if(strcmp($type, "year")===0){
         $result= mysqli_query($db_conn, "SELECT CODICE, URL, count(*) as NUMERO_VISITE_PER_SITO 
                                                             FROM SITO_WEB join VISITA
                                                             ON (SITO_WEB.CODICE=VISITA.SITO)
@@ -110,7 +119,7 @@ if(isset($type) && isset($id_cliente)){
         echo $json;
     }
 
-    else if(strcmp($type, "custom")==0){
+    else if(strcmp($type, "custom")===0){
                                 if(isset($begin) && isset($end)){
                                     $result= mysqli_query($db_conn, "SELECT CODICE, URL, count(*) as NUMERO_VISITE_PER_SITO 
                                                                                     FROM SITO_WEB join VISITA

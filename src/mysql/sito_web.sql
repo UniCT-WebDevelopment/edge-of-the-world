@@ -76,7 +76,7 @@ create table COMPONENTE(
 
 create table UTENTE(
     ID_UTENTE INTEGER AUTO_INCREMENT PRIMARY KEY,
-    USERNAME varchar(100),
+    USERNAME varchar(100) unique,
     PASSWORD varchar(128),
     NOME varchar(20),
     COGNOME varchar(20),

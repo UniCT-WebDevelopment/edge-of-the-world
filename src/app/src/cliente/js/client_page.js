@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    var id_cliente=3;
 
     var sito_table = $('#site-table').DataTable({
             "processing": true,
@@ -24,7 +23,7 @@ $(document).ready(function() {
 
             type: 'POST',
             url: '../cliente/getVisitaBarChart_cliente.php',
-            data: {type: 'general', id_cliente: id_cliente},
+            data: {type: 'general'},
             dataType: "json", // type of returned data
 
             success: function (data) {
@@ -59,7 +58,7 @@ $(document).ready(function() {
 
             type : 'POST',
             url  : '../cliente/getVisitaBarChart_cliente.php',
-            data: {type: 'month', id_cliente: id_cliente},
+            data: {type: 'month'},
             dataType: "json", // type of returned data
 
             success :  function(data)
@@ -85,7 +84,7 @@ $(document).ready(function() {
 
             type : 'POST',
             url  : '../cliente/getVisitaBarChart_cliente.php',
-            data: {type: 'year', id_cliente: id_cliente},
+            data: {type: 'year'},
             dataType: "json", // type of returned data
 
             success :  function(data)
@@ -120,7 +119,7 @@ $(document).ready(function() {
 
             type : 'POST',
             url  : '../cliente/getVisitaBarChart_cliente.php',
-            data: {type: 'custom', id_cliente: id_cliente, begin: begin, end: end},
+            data: {type: 'custom',begin: begin, end: end},
             dataType: "json", // type of returned data
 
             success :  function(data)
