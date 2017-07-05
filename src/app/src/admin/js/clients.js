@@ -279,31 +279,57 @@ $(document).ready(function()
         var address=$("#address_new").val();
         var tel_number=$("#tel_number_new").val();
 
-        $.ajax({
 
-            type : 'POST',
-            url  : '../admin/insert_cliente.php',
-            data: {c_f: c_f, city: city, address: address, tel_number: tel_number},
-            dataType: "json", // type of returned data
-
-            success :  function(data)
-            {
-                console.log("try");
-                if(data.response === 0 ){
-
-
-                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
-
-                 console.log("Success insert");
-                }
-                else if(data.response === 1){
-                    console.log("Failed insert");
-                }
-                else{
-                    console.log("POST problem");
-                }
+        if(c_f==="" ) {
+            $('#c_f_new').css("border", "1px solid red");
+        }
+        else{
+            $('#c_f_new').css("border", "");
+        }
+        if(city===""){
+            $('#city_new').css("border", "1px solid red");
+        }
+        else{
+            $('#city_new').css("border", "");
+        }
+        if(address==="") {
+                $('#address_new').css("border", "1px solid red");
             }
-        });
+        else{
+            $('#address_new').css("border", "");
+        }
+        if(tel_number==="") {
+            $('#tel_number_new').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#tel_number_new').css("border", "");
+            $.ajax({
+
+                type: 'POST',
+                url: '../admin/insert_cliente.php',
+                data: {c_f: c_f, city: city, address: address, tel_number: tel_number},
+                dataType: "json", // type of returned data
+
+                success: function (data) {
+                    console.log("try");
+                    if (data.response === 0) {
+                        $('#c_f_new').val("");
+                        $('#city_new').val("");
+                        $('#address_new').val("");
+                        $('#tel_number_new').val("");
+
+                        console.log("Success insert");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed insert");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
+                }
+            });
+        }
         client_table.ajax.reload();
         return false;
 

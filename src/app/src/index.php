@@ -83,21 +83,13 @@ else{
                                             <div class="form-group">
                                                 <label class="sr-only" for="password">Password</label>
                                                 <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                                <div class="help-block text-right login-text"><a href="">Forget the password ?</a></div>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-primary btn-block" id="submit-button">Sign in</button>
                                             </div>
-                                            <div class="checkbox login-text" >
-                                                <label>
-                                                    <input type="checkbox"> keep me logged-in
-                                                </label>
-                                            </div>
                                         </form>
                                     </div>
-                                    <div class="bottom text-center login-text">
-                                        New here ? <a href="#"><b>Join Us</b></a>
-                                    </div>
+
                                 </div>
                                 <?php else : ?>
                                     <div>
