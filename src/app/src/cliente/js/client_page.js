@@ -1,11 +1,24 @@
 $(document).ready(function() {
 
+    $.ajax({
+
+        type : 'POST',
+        url  : '../cliente/get_user_data.php',
+        data: {},
+        dataType: "json", // type of returned data
+
+        success :  function(data)
+        {
+            $('#username').text(" Benvenuto "+ data.nome);
+        }
+    });
+
     var sito_table = $('#site-table').DataTable({
             "processing": true,
             //"serverSide": true,
             "bDestroy": true,
             // "bJQueryUI": true,
-            "sAjaxSource": "cliente_sito_search.php?id_cliente=" + id_cliente,
+            "sAjaxSource": "cliente_sito_search.php",
             "bFilter ": true,
             "responsive": true,
             "aoColumns": [

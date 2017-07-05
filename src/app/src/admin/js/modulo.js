@@ -1,5 +1,22 @@
 $(document).ready(function()
 {
+
+
+
+    $.ajax({
+
+        type : 'POST',
+        url  : '../admin/get_user_data.php',
+        data: {},
+        dataType: "json", // type of returned data
+
+        success :  function(data)
+        {
+            $('#username').text(" Benvenuto "+ data.nome);
+        }
+    });
+
+
     var client_table= $('#modulo-table').DataTable({
                                     "processing": true,
                                     //"serverSide": true,

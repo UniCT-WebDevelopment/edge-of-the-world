@@ -16,7 +16,16 @@ if( mysqli_connect_error()){
 }
 
 
-$id_cliente=(int)($_GET['id_cliente']);
+$username= $_SESSION['username'];
+
+
+$result= mysqli_query($db_conn, "SELECT ID_CLIENTE from UTENTE_CLIENTE join UTENTE
+                                           ON(UTENTE_CLIENTE. ID_UTENTE = UTENTE.ID_UTENTE)
+                                           WHERE UTENTE.USERNAME= '$username'");
+
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+$id_cliente=$row['ID_CLIENTE'];
 
 if(isset($id_cliente)){
     $result= mysqli_query($db_conn, "SELECT * FROM SITO_WEB WHERE CLIENTE='$id_cliente'");

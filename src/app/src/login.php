@@ -1,10 +1,5 @@
 <?php
-
-$db_host = "db:3306";
-$db_name = "sito_web";
-$db_user = "root";
-$db_pass = "toor";
-
+require ('db.php');
 
 $db_conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 

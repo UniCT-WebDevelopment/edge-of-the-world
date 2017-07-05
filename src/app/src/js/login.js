@@ -1,6 +1,21 @@
 
 $('document').ready(function()
 {
+
+    $.ajax({
+
+        type : 'POST',
+        url  : 'get_user_data.php',
+        data: {},
+        dataType: "json", // type of returned data
+
+        success :  function(data)
+        {
+            $('#user-name').text(" Benvenuto " + data.nome);
+        }
+    });
+
+
     /* validation */
     $("#submit-button").click(function()
     {
@@ -31,6 +46,9 @@ $('document').ready(function()
         });
         return false;
     });
+
+
+
 });
 
 

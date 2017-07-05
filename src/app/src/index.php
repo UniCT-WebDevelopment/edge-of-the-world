@@ -100,6 +100,9 @@ else{
                                     </div>
                                 </div>
                                 <?php else : ?>
+                                    <div>
+                                        <i class="fa fa-fw fa-user" id="user-name"></i>
+                                    </div>
                                 <div class="row" id="private-panel">
                                     <?php if(strcmp($_SESSION['type'], "admin")===0) : ?>
                                     <div class="col-md-12 private-link">
