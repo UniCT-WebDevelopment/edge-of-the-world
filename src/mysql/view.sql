@@ -78,3 +78,15 @@ insert into VISITA (IP, DATA , SITO) values ("134.55.67.123", "2017-06-20", 6);
 insert into VISITA (IP, DATA ,SITO) values ("67.89.123.2", "2017-06-30", 10);
 
 insert into VISITA (IP, DATA,SITO) values ("115.21.32.123", "2017-06-29", 9);
+
+
+
+select NOME, count(*) as NUMERO_UTILIZZO
+from LAYOUT join COMPONENTE
+on (LAYOUT.ID=COMPONENTE.ID_LAYOUT)
+join MODULO
+on(COMPONENTE.ID_MODULO = MODULO.ID)
+where LAYOUT.SVILUPPATORE="1234567891"
+group by COMPONENTE.ID_MODULO;
+
+
