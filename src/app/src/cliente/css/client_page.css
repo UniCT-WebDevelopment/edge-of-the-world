@@ -13,3 +13,24 @@
 #layout-details{
     color:black;
 }
+
+#visite-generali{
+    background: dodgerblue;
+
+}
+
+#ultimo-mese{
+    background: orangered;
+}
+
+#ultimo-anno{
+    background: forestgreen;
+}
+
+#ricerca-avanzata{
+    background: blueviolet;
+}
+
+#username{
+    font-style: normal;
+}

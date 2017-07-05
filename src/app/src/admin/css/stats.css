@@ -12,6 +12,9 @@
 }
 
 #ricerca-avanzata{
-    background: yellow;
-    color:black;
+    background: blueviolet;
+}
+
+#username{
+    font-style: normal;
 }

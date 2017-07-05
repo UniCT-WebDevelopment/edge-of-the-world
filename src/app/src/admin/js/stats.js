@@ -167,7 +167,7 @@ $(document).ready(function () {
                     xkey:'url',
                     ykeys:['n_visite'],
                     labels:['Numero Visite'],
-                    barColors: ['yellow']
+                    barColors: ['blueviolet']
                 });
             },
             error: function () {
