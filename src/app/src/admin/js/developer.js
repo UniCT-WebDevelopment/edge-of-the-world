@@ -92,38 +92,73 @@ $(document).ready(function()
 
     $('#new_developer_save').click(function(){
 
+        var i=0;
+
         var piva=$('#id-developer-new').val();
         var nome=$("#nome-developer-new").val();
         var cognome=$("#cognome-developer-new").val();
         var telefono=$('#tel-developer-new').val();
 
-        console.log(piva);
-        console.log(nome);
-        console.log(cognome);
-        console.log(telefono);
+        if(piva==="" ) {
+            $('#id-developer-new').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#id-developer-new').css("border", "");
+            i++;
+        }
+        if(nome===""){
+            $('#nome-developer-new').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#nome-developer-new').css("border", "");
+            i++;
+        }
+        if(cognome==="") {
+            $('#cognome-developer-new').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#cognome-developer-new').css("border", "");
+            i++;
+        }
+        if(telefono ===""){
+            $('#tel-developer-new').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#tel-developer-new').css("border", "");
+            i++;
+        }
+        if (i === 3){
+            $.ajax({
 
-        $.ajax({
+                type: 'POST',
+                url: '../admin/insert_developer.php',
+                data: {piva: piva, nome: nome, cognome: cognome, telefono: telefono},
+                dataType: "json", // type of returned data
 
-            type : 'POST',
-            url  : '../admin/insert_developer.php',
-            data: {piva: piva, nome: nome, cognome: cognome, telefono: telefono},
-            dataType: "json", // type of returned data
-
-            success :  function(data)
-            {
-                if(data.response === 0 ){
-
-                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
-                 console.log("Success insert");
+                success: function (data) {
+                    if (data.response === 0) {
+                        $('#id-developer-new').val("");
+                        $('#nome-developer-new').val("");
+                        $('#cognome-developer-new').val("");
+                        $('#tel-developer-new').val("");
+                        console.log("Success insert");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed insert");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed insert");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
 
@@ -131,35 +166,64 @@ $(document).ready(function()
 
     $('#update-modal-save').click(function(){
 
+        var i=0;
+
 
         var piva=$('#id-developer').val();
         var nome=$("#nome-developer").val();
         var cognome=$("#cognome-developer").val();
         var telefono=$('#tel-developer').val();
 
+        if(nome===""){
+            $('#nome-developer').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#nome-developer').css("border", "");
+            i++;
+        }
+        if(cognome==="") {
+            $('#cognome-developer').css("border", "1px solid red");
+            return fals;
+        }
+        else {
+            $('#cognome-developer').css("border", "");
+            i++;
+        }
+        if(telefono ===""){
+            $('#tel-developer').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#tel-developer').css("border", "");
+            i++;
+        }
+        if( i===3){
+            $.ajax({
 
-        $.ajax({
+                type: 'POST',
+                url: '../admin/update_developer.php',
+                data: {piva: piva, nome: nome, cognome: cognome, telefono: telefono},
+                dataType: "json", // type of returned data
 
-            type : 'POST',
-            url  : '../admin/update_developer.php',
-            data: {piva: piva, nome: nome, cognome: cognome, telefono: telefono},
-            dataType: "json", // type of returned data
+                success: function (data) {
 
-            success :  function(data)
-            {
-
-                if(data.response === 0 ){
-
-                    console.log("Success update");
+                    if (data.response === 0) {
+                        $('#update-modal').modal('hide');
+                        console.log("Success update");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed update");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed update");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
     });

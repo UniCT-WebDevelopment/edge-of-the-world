@@ -94,35 +94,65 @@ $(document).ready(function()
 
     $('#new_modulo_save').click(function(){
 
+        var i=0;
+
         var nome=$("#nome-modulo-new").val();
         var funzione=$("#funzione-modulo-new").val();
         var costo=$('#costo-modulo-new').val();
 
-        $.ajax({
 
-            type : 'POST',
-            url  : '../admin/insert_modulo.php',
-            data: {nome: nome, funzione: funzione, costo: costo},
-            dataType: "json", // type of returned data
+        if(nome===""){
+            $('#nome-modulo-new').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#nome-modulo-new').css("border", "");
+            i++;
+        }
+        if(funzione==="") {
+            $('#funzione-modulo-new').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#funzione-modulo-new').css("border", "");
+            i++;
+        }
+        if(costo===""){
+            $('#costo-modulo-new').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#costo-modulo-new').css("border", "");
+            i++;
+        }
+        if(i===3){
+            $.ajax({
 
-            success :  function(data)
-            {
+                type: 'POST',
+                url: '../admin/insert_modulo.php',
+                data: {nome: nome, funzione: funzione, costo: costo},
+                dataType: "json", // type of returned data
 
-                if(data.response === 0 ){
+                success: function (data) {
 
-
-                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
-
-                 console.log("Success insert");
+                    if (data.response === 0) {
+                        $('#nome-modulo-new').val("");
+                        $('#funzione-modulo-new').val("");
+                        $('#costo-modulo-new').val("");
+                        console.log("Success insert");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed insert");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed insert");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
 
@@ -130,6 +160,7 @@ $(document).ready(function()
 
     $('#update-modal-save').click(function(){
 
+        var i=0;
 
         var id=$('#id-modulo').val();
         var nome=$("#nome-modulo").val();
@@ -137,28 +168,56 @@ $(document).ready(function()
         var costo=$('#costo-modulo').val();
 
 
-        $.ajax({
+        if(nome===""){
+            $('#nome-modulo').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#nome-modulo').css("border", "");
+            i++;
+        }
+        if(funzione==="") {
+            $('#funzione-modulo').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#funzione-modulo').css("border", "");
+            i++;
+        }
+        if(costo===""){
+            $('#costo-modulo').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#costo-modulo').css("border", "");
+            i++;
+        }
+        if (i === 3){
+            $.ajax({
 
-            type : 'POST',
-            url  : '../admin/update_modulo.php',
-            data: {id: id, nome: nome, funzione: funzione, costo: costo},
-            dataType: "json", // type of returned data
+                type: 'POST',
+                url: '../admin/update_modulo.php',
+                data: {id: id, nome: nome, funzione: funzione, costo: costo},
+                dataType: "json", // type of returned data
 
-            success :  function(data)
-            {
+                success: function (data) {
 
-                if(data.response === 0 ){
-
-                    console.log("Success update");
+                    if (data.response === 0) {
+                        $('#update-modal').modal('hide');
+                        console.log("Success update");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed update");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed update");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
     });

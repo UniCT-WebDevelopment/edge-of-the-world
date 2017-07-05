@@ -19,31 +19,54 @@ $('document').ready(function()
     /* validation */
     $("#submit-button").click(function()
     {
-       
+        var i=0;
+
         var username = $("#username").val();
         var password = $("#password").val();
-        password=sha512(password);
-
-        $.ajax({
 
 
-            type : 'GET',
-            url  : '../login.php',
-            data: {username: username, password: password },
-            dataType: "json", // type of returned data
+        if(username===''){
+            $('#username').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#username').css("border", "");
+            i++;
+        }
+        if(password===''){
+            $('#password').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#password').css("border", "");
+            i++;
+        }
+        if (i ===2){
+            password = sha512(password);
 
-            success :  function(data)
-            {
-                console.log("try");
-                if(data.response === 1 ){
-                    window.location.replace(data.url);
+            $.ajax({
+
+
+                type: 'GET',
+                url: '../login.php',
+                data: {username: username, password: password},
+                dataType: "json", // type of returned data
+
+                success: function (data) {
+                    console.log("try");
+                    if (data.response === 1) {
+                        window.location.replace(data.url);
+                    }
+                    else {
+                        console.log("login incorrect");
+
+                    }
                 }
-                else{
-                    console.log("login incorrect");
-
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         return false;
     });
 

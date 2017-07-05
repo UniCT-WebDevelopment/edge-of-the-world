@@ -200,39 +200,70 @@ $(document).ready(function()
     });
 
     $('#add_sito_web_button').click(function(){
+
+        var i=0;
+
         var url= $('#url_input').val();
         var data= $('#date_input').val();
         var codice= $('#codice_cliente').val();
         var id_layout=$('#id_layout').val();
 
-        $.ajax({
 
-            type : 'POST',
-            url  : '../admin/add_sito_web.php',
-            data: {url: url, data: data, codice: codice, id_layout: id_layout},
-            dataType: "json", // type of returned data
+        if(url==="" ) {
+            $('#url_input').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#url_input').css("border", "");
+            i++;
+        }
+        if(data===""){
+            $('#date_input').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#date_input').css("border", "");
+            i++;
+        }
+        if(id_layout==="") {
+            $('#id_layout').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#id_layout').css("border", "");
+            i++;
+        }
+        if(i === 3){
+            $.ajax({
 
-            success :  function(data)
-            {
+                type: 'POST',
+                url: '../admin/add_sito_web.php',
+                data: {url: url, data: data, codice: codice, id_layout: id_layout},
+                dataType: "json", // type of returned data
 
-                if(data.response === 0 ){
+                success: function (data) {
 
-
-                    //TODO controllare i form di inserimento e resettarli dopo il corretto inserimento
-
-                    console.log("Success insert");
+                    if (data.response === 0) {
+                        $('#url_input').val("");
+                        $('#date_input').val("");
+                        $('#id_layout').val("");
+                        $('#sito_web_modal').modal('hide');
+                        console.log("Success insert");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed insert");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed insert");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
-
 
    });
 
@@ -274,6 +305,8 @@ $(document).ready(function()
 
     $('#new_client_save').click(function(){
 
+        var i=0;
+
         var c_f=$("#c_f_new").val();
         var city=$("#city_new").val();
         var address=$("#address_new").val();
@@ -282,21 +315,27 @@ $(document).ready(function()
 
         if(c_f==="" ) {
             $('#c_f_new').css("border", "1px solid red");
+            return false;
         }
         else{
             $('#c_f_new').css("border", "");
+            i++;
         }
         if(city===""){
             $('#city_new').css("border", "1px solid red");
+            return false;
         }
         else{
             $('#city_new').css("border", "");
+            i++;
         }
         if(address==="") {
                 $('#address_new').css("border", "1px solid red");
+                return false;
             }
         else{
             $('#address_new').css("border", "");
+            i++;
         }
         if(tel_number==="") {
             $('#tel_number_new').css("border", "1px solid red");
@@ -304,6 +343,9 @@ $(document).ready(function()
         }
         else {
             $('#tel_number_new').css("border", "");
+            i++;
+        }
+        if( i === 4){
             $.ajax({
 
                 type: 'POST',
@@ -330,6 +372,9 @@ $(document).ready(function()
                 }
             });
         }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
 
@@ -337,32 +382,64 @@ $(document).ready(function()
 
     $('#update-modal-save').click(function(){
 
+        var i=0;
+
         var codice=$('#codice').val();
         var city=$("#city").val();
         var address=$("#address").val();
         var tel_number=$("#tel_number").val();
-        $.ajax({
 
-            type : 'POST',
-            url  : '../admin/update_cliente.php',
-            data: {codice: codice, city: city, address: address, tel_number: tel_number},
-            dataType: "json", // type of returned data
 
-            success :  function(data)
-            {
-                console.log("try");
-                if(data.response === 0 ){
+        if(city===""){
+            $('#city').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#city').css("border", "");
+            i++;
+        }
+        if(address==="") {
+            $('#address').css("border", "1px solid red");
+            return false;
+        }
+        else{
+            $('#address').css("border", "");
+            i++
+        }
+        if(tel_number==="") {
+            $('#tel_number').css("border", "1px solid red");
+            return false;
+        }
+        else {
+            $('#tel_number').css("border", "");
+            i++
+        }
+        if(i === 3) {
+            $.ajax({
 
-                    console.log("Success update");
+                type: 'POST',
+                url: '../admin/update_cliente.php',
+                data: {codice: codice, city: city, address: address, tel_number: tel_number},
+                dataType: "json", // type of returned data
+
+                success: function (data) {
+                    console.log("try");
+                    if (data.response === 0) {
+                        $('#update-modal').modal('hide');
+                        console.log("Success update");
+                    }
+                    else if (data.response === 1) {
+                        console.log("Failed update");
+                    }
+                    else {
+                        console.log("POST problem");
+                    }
                 }
-                else if(data.response === 1){
-                    console.log("Failed update");
-                }
-                else{
-                    console.log("POST problem");
-                }
-            }
-        });
+            });
+        }
+        else{
+            return false;
+        }
         client_table.ajax.reload();
         return false;
     });
