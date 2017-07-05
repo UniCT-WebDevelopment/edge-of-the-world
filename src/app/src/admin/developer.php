@@ -196,6 +196,8 @@ if($_SESSION['type']!= "admin")
                                     <th>Options</th>
                                 </tr>
                                 </tfoot>
+                                <tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>

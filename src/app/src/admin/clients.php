@@ -311,7 +311,7 @@ if($_SESSION['type']!= "admin")
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li class="active">
-                    <a href="dashboard.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <a href="riepilogo.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="clients.php"><i class="fa fa-fw fa-btc"></i> Gestione Clienti</a>

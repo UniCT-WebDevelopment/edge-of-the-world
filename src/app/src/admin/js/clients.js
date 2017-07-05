@@ -87,8 +87,6 @@ $(document).ready(function()
                                                         {"mData": "Url"},
                                                         {"mData": "Data Pubblicazione"},
                                                         {"mData": "Layout"},
-                                                        {"defaultContent":
-                                                        '<button id="delete-sito" class="btn btn-danger">Elimina</button>'},
                                                     ],
 
                                                   });
