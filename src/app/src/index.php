@@ -101,7 +101,7 @@ else{
                                 </div>
                                 <?php else : ?>
                                     <div>
-                                        <i class="fa fa-fw fa-user" id="user-name"></i>
+                                        <i class="fa fa-fw fa-user" id="user-icon"></i><a disabled id="user-name"></a>
                                     </div>
                                 <div class="row" id="private-panel">
                                     <?php if(strcmp($_SESSION['type'], "admin")===0) : ?>
@@ -173,26 +173,9 @@ else{
                 <p>Manda una mail per informazioni e per eventuali preventivi!</p>
                 <p><a href="mailto:support@edgeoftherworld.com">support@edgeoftheworld.com</a>
                 </p>
-                <!--
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-                -->
             </div>
         </div>
     </section>
-
-    <!-- Map Section -->
-    <div id="map"></div>
-
     <!-- Footer -->
     <footer>
         <div class="container text-center">
@@ -208,10 +191,6 @@ else{
 
     <!-- Plugin JavaScript Vedere se posso sotituirlo con una locale-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/grayscale.min.js"></script>
