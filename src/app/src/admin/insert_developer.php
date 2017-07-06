@@ -25,7 +25,6 @@ $telefono=mysqli_real_escape_string($db_conn, $_POST['telefono']);
 if(isset($piva) && isset($nome) && isset($cognome) && isset($telefono)) {
 
   $return_value = mysqli_query($db_conn, "INSERT INTO SVILUPPATORE (PIVA, NOME, COGNOME, TELEFONO) VALUES('$piva','$nome','$cognome','$telefono')") or die(mysqli_error($db_conn));
-  echo $return_value;
 
    if($return_value){
 

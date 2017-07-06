@@ -131,7 +131,7 @@ $(document).ready(function()
             $('#tel-developer-new').css("border", "");
             i++;
         }
-        if (i === 3){
+        if (i === 4){
             $.ajax({
 
                 type: 'POST',
