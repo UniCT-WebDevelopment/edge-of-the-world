@@ -50,3 +50,7 @@
 #username{
     font-style: normal;
 }
+
+.intro, body, html{
+    background-color: white;
+}
