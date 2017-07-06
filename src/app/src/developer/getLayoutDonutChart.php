@@ -26,10 +26,11 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 $piva=$row['PIVA'];
 
-$result= mysqli_query($db_conn, "SELECT ID, count(*) as NUMERO_UTILIZZO 
-                                        FROM LAYOUT
-                                        WHERE LAYOUT.SVILUPPATORE= '$piva'
-                                        group by ID");
+$result= mysqli_query($db_conn, " select LAYOUT.ID, count(*) as NUMERO_UTILIZZO
+                                              from SITO_WEB join LAYOUT
+                                              on (SITO_WEB.LAYOUT=LAYOUT.ID)
+                                              where LAYOUT.SVILUPPATORE='$piva'
+                                              group by LAYOUT.ID");
 
 
 

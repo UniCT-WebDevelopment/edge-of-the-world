@@ -172,10 +172,9 @@ select MODULO.ID, MODULO.NOME, count(*) as NUMERO_UTILIZZO
 
     
 create view NUMERO_UTILIZZO_LAYOUT as
-    select LAYOUT.ID, count(*) as NUMERO_UTILIZZO
-    from LAYOUT join COMPONENTE 
-    on(LAYOUT.ID=COMPONENTE.ID_LAYOUT)
-    group by LAYOUT.ID;
+    select SITO_WEB.LAYOUT as ID , count(*) as NUMERO_UTILIZZO
+    from SITO_WEB
+    group by SITO_WEB.LAYOUT;
 
     
     
