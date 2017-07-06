@@ -269,11 +269,12 @@ $(document).ready(function()
             success :  function(data)
             {
                 if(data.response === 0 ){
-
+                    client_table.ajax.reload();
                     console.log("Success delete");
 
                 }
                 else if(data.response === 1){
+                    alert("Impossibile eliminare un layout a cui sono stati assegnati moduli e/o sviluppatore. Elimina prima i moduli e/o lo sviluppatore dal layout");
                     console.log("Failed delete");
                 }
                 else{
@@ -281,7 +282,7 @@ $(document).ready(function()
                 }
             }
         });
-        client_table.ajax.reload();
+
     });
 
     $('#layout-table').on('click', '#add-developer', function(){

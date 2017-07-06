@@ -18,7 +18,7 @@ $id= mysqli_real_escape_string($db_conn,$_POST['id']);
 
 if(isset($id)) {
 
-  $return_value = mysqli_query($db_conn, "DELETE FROM MODULO WHERE ID = '$id' ") or die(mysqli_error($db_conn));
+  $return_value = mysqli_query($db_conn, "DELETE FROM MODULO WHERE ID = '$id' ");
 
    if($return_value){
 

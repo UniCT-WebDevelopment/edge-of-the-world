@@ -89,4 +89,18 @@ on(COMPONENTE.ID_MODULO = MODULO.ID)
 where LAYOUT.SVILUPPATORE="1234567891"
 group by COMPONENTE.ID_MODULO;
 
+delimiter //
+
+
+create trigger update_modulo
+after update
+on MODULO
+for each row
+begin   
+ update LAYOUT
+    set COSTO_TOTALE=COSTO_TOTALE - OLD.COSTO + NEW.COSTO
+    where ID = any (select ID_LAYOUT from COMPONENTE where ID_MODULO = NEW.ID);
+end //
+
+
 

@@ -69,11 +69,12 @@ $(document).ready(function()
             success :  function(data)
             {
                 if(data.response === 0 ){
-
+                    client_table.ajax.reload();
                     console.log("Success delete");
 
                 }
                 else if(data.response === 1){
+                    alert("Impossibile eliminare il modulo perchè assegnato a uno o più layout. Elimina prima il modulo da tutti i Layout");
                     console.log("Failed delete");
                 }
                 else{
@@ -81,7 +82,6 @@ $(document).ready(function()
                 }
             }
         });
-        client_table.ajax.reload();
     });
 
 

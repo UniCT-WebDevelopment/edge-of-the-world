@@ -67,11 +67,12 @@ $(document).ready(function()
             success :  function(data)
             {
                 if(data.response === 0 ){
-
+                    client_table.ajax.reload();
                     console.log("Success delete");
 
                 }
                 else if(data.response === 1){
+                    alert("Impossibile cancellare uno sviluppatore a cui sono stati assegnati layout. Elimina prima lo sviluppatore dai layout");
                     console.log("Failed delete");
                 }
                 else{
@@ -79,7 +80,7 @@ $(document).ready(function()
                 }
             }
         });
-        client_table.ajax.reload();
+
     });
 
 

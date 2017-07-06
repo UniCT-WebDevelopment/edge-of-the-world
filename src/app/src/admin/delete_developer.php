@@ -18,7 +18,7 @@ $piva= mysqli_real_escape_string($db_conn,$_POST['piva']);
 
 if(isset($piva)) {
 
-  $return_value = mysqli_query($db_conn, "DELETE FROM SVILUPPATORE WHERE PIVA = '$piva' ") or die(mysqli_error($db_conn));
+  $return_value = mysqli_query($db_conn, "DELETE FROM SVILUPPATORE WHERE PIVA = '$piva' ");
 
    if($return_value){
 

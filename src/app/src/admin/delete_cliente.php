@@ -18,7 +18,7 @@ $codice=(int)($_POST['codice']);
 
 if(isset($codice)) {
 
-  $return_value = mysqli_query($db_conn, "DELETE FROM CLIENTE WHERE CODICE = '$codice' ") or die(mysqli_error($db_conn));
+  $return_value = mysqli_query($db_conn, "DELETE FROM CLIENTE WHERE CODICE = '$codice' ");
 
    if($return_value){
 

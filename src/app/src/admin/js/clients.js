@@ -131,12 +131,13 @@ $(document).ready(function()
 
             success :  function(data)
             {
-                if(data.response === 0 ){
+                    if(data.response === 0 ){
+                        client_table.ajax.reload();
+                        console.log("Success delete");
 
-                    console.log("Success delete");
-
-                }
+                    }
                 else if(data.response === 1){
+                    alert("Impossibile eliminare un utente con siti commissionati. Cancella prima i siti commissionati");
                     console.log("Failed delete");
                 }
                 else{
@@ -144,7 +145,7 @@ $(document).ready(function()
                 }
             }
         });
-        client_table.ajax.reload();
+
     });
 
     $('#client-table tbody').on( 'click', '#add-website', function () {
@@ -217,7 +218,7 @@ $(document).ready(function()
             $('#url_input').css("border", "");
             i++;
         }
-        if(data===""){
+        if(!isValidDate(data)){
             $('#date_input').css("border", "1px solid red");
             return false;
         }
@@ -443,5 +444,32 @@ $(document).ready(function()
         client_table.ajax.reload();
         return false;
     });
+
+    function isValidDate(str){
+        // STRING FORMAT yyyy-mm-dd
+        if(str=="" || str==null){return false;}
+
+        // m[1] is year 'YYYY' * m[2] is month 'MM' * m[3] is day 'DD'
+        var m = str.match(/(\d{4})-(\d{2})-(\d{2})/);
+
+        // STR IS NOT FIT m IS NOT OBJECT
+        if( m === null || typeof m !== 'object'){return false;}
+
+        // CHECK m TYPE
+        if (typeof m !== 'object' && m !== null && m.size!==3){return false;}
+
+        var ret = true; //RETURN VALUE
+        var thisYear = new Date().getFullYear(); //YEAR NOW
+        var minYear = 1999; //MIN YEAR
+
+        // YEAR CHECK
+        if( (m[1].length < 4) || m[1] < minYear || m[1] > thisYear){ret = false;}
+        // MONTH CHECK
+        if( (m[2].length < 2) || m[2] < 1 || m[2] > 12){ret = false;}
+        // DAY CHECK
+        if( (m[3].length < 2) || m[3] < 1 || m[3] > 31){ret = false;}
+
+        return ret;
+    }
 
 });

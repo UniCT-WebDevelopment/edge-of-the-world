@@ -13,7 +13,7 @@ $username = htmlspecialchars($_GET['username'],ENT_QUOTES);
 $password = $_GET['password'];
 
 
-$result = mysqli_query($db_conn, "SELECT * FROM UTENTE WHERE USERNAME = '".$_GET['username']."'")or die(mysqli_error($db_conn));
+$result = mysqli_query($db_conn, "SELECT * FROM UTENTE WHERE USERNAME = '".$_GET['username']."'");
 
 
 if( mysqli_num_rows($result) != 0){
@@ -46,7 +46,7 @@ if( mysqli_num_rows($result) != 0){
 }
 
 else{
-    echo "Nessun utente trovato. Controlla username e password. sono il backend";
+    echo json_encode(($ret['response']=0));
 }
 
 

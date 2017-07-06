@@ -31,7 +31,7 @@ if(isset($url) && isset($data) && isset($codice) &&  isset($id_layout)) {
    }
 
    else{
-       $ret['response'] = $return_value;
+       $ret['response'] = 1;
    }
 
 

@@ -18,7 +18,7 @@ $id= (int)($_POST['id']);
 
 if(isset($id)) {
 
-  $return_value = mysqli_query($db_conn, "DELETE FROM LAYOUT WHERE ID = '$id' ") or die(mysqli_error($db_conn));
+  $return_value = mysqli_query($db_conn, "DELETE FROM LAYOUT WHERE ID = '$id' ");
 
    if($return_value){
 

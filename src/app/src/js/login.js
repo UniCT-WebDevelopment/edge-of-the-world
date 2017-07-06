@@ -58,8 +58,10 @@ $('document').ready(function()
                         window.location.replace(data.url);
                     }
                     else {
+                        $('#username').css("border", "1px solid red");
+                        $('#password').css("border", "1px solid red");
                         console.log("login incorrect");
-
+                        alert("Username o Password Errati");
                     }
                 }
             });
