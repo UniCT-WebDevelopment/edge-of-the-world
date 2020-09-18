@@ -35,22 +35,9 @@ if($_SESSION['type']!= "admin")
 
     <link href="../css/grayscale.min.css" rel="stylesheet" type="text/css">
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/riepilogo.css">
-
-
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
-
-
-
-
-
-    <script src="js/riepilogo.js"></script>
-
 
 </head>
 
@@ -371,7 +358,10 @@ if($_SESSION['type']!= "admin")
 </div>
 <!-- /#wrapper -->
 
-    <!-- Bootstrap Core JavaScript -->
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
+    <script src="js/riepilogo.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
 </body>

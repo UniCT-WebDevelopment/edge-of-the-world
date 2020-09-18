@@ -136,7 +136,7 @@ else{
                             <br>Tim Berners-Lee, L'architettura del nuovo Web, 1999
                         </p>
                         <div>
-                        <img src="img/tim-berner-lee.jpg" class="img-circle" width="204" height="204">
+                        <img src="img/tim-berners-lee.jpg" class="img-circle" width="204" height="204">
                         </div>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>

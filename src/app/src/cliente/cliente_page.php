@@ -33,21 +33,9 @@ if($_SESSION['type']!= "cliente")
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/client_page.css">
-
-
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
-
-
-
-
-    <script src="js/client_page.js"></script>
-
 
 </head>
 
@@ -270,10 +258,13 @@ if($_SESSION['type']!= "cliente")
 </div>
 <!-- /#wrapper -->
 
-<!-- Bootstrap Core JavaScript -->
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/jqc-1.12.4/dt-1.10.15/b-1.3.1/r-2.1.1/se-1.2.2/datatables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.2.2/js/dataTables.select.min.js"></script>
+<script src="js/client_page.js"></script>
+
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Morris Charts JavaScript -->
 <script src="js/plugins/morris/raphael.min.js"></script>
 <script src="js/plugins/morris/morris.min.js"></script>
 <script src="js/plugins/morris/morris-data.js"></script>

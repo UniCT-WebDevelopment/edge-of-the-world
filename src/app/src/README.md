@@ -24,3 +24,21 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2017 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-full-width-pics/blob/gh-pages/LICENSE) license.
+
+
+### Utenti di default:
+
+Marco Rossi:
+    role: admin
+    username: marco.rossi@live.it
+    password: marcopassword
+
+Angelo Cassano:
+    role: developer
+    username: angelo.cassano@gmail.com
+    password: angelopassword
+
+Flavio Romano:
+    role: user
+    username: flavioromano@live.it
+    password: flaviopassword

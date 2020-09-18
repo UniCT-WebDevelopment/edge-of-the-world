@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:5.6.49
 
 ENV MYSQL_DATABASE sito_web
 ENV MYSQL_ROOT_PASSWORD toor

@@ -26,11 +26,6 @@ if(isset($codice) && isset($city) && isset($address) && isset($tel_number)) {
                                                 SET CITTA = '$city', INDIRIZZO = '$address', TELEFONO = '$tel_number'
                                                 WHERE CODICE = '$codice'") or die(mysqli_error($db_conn));
 
-  //TODO il codice fiscale non deve essere modificato in quanto chiave unique per l'update. Le due possibili soluzioni sono:
-    //Rendere il codice fiscale non editabile
-    //Resistuire anche l'id e usare quello come ricerca
-
-
    if($return_value){
 
        $ret['response'] = 0;
