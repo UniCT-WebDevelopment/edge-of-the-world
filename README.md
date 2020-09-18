@@ -1,7 +1,10 @@
 ### Requirements
     docker and docker-compose
 
-### Utenti di default:
+### How to run:
+    Run docker-compose up. Website will be available to http://localhost:8080
+
+### Default users:
 
 Marco Rossi:
     role: admin
