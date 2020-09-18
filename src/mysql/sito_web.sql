@@ -184,16 +184,6 @@ create view NUMERO_VISITE_PER_SITO as
     on(SITO_WEB.CODICE=VISITA.SITO)
     group by SITO_WEB.CODICE;
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 
 insert into UTENTE (USERNAME, PASSWORD, NOME, COGNOME, TYPE) values ("marco.rossi@live.it", "a9fe2d70e4d7389041f7e93e091e7bb4da31d87356ee11e00d333d3b5ccd50d7c656d90d2463c0abe057eecfd930fbe3d5fdc9dfb5ef844044774cff68c362be", "Marco", "Rossi", "admin");
 
