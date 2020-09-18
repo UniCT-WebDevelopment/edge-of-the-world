@@ -60,11 +60,38 @@ Dopo aver clonato il repository, basta spostarsi all'interno della cartella prin
 ```
 Per fermare i container premere **Ctrl+C**.
 
+Per cambiare la configurazione di Apache e MariaDb fare riferimento ai relativi *Dockerfile*:
+- **src/app/Dockerfile** per il container Apache
+- **src/mqsql/Dockerfile** per il container Mariadb
+
+Sotto **src/mysql** sono disponibili anche i file di inizializzione del database. Per aggiungere nuovi record si può fare riferimento ai file **.sql**. E' sconsigliato modificare le tabelle perchè questo potrebbe portare a malfunzionamenti nell'app.
+
 La landing page sarà quindi disponibile presso:
 ```
     http://localhost:8080
 ```
 Da qui eseguendo il login con una delle credenziali fornite di seguito sarà possibile consultare le varie dashboard.
+
+Al riavvio del sistema i container risulteranno in esecuzione. Per eliminare questo comportamento basta modificare il file **docker-compose.yml** in questo modo:
+```
+version: '2'
+
+services:
+  db: 
+    build: ./src/mysql
+    ports: 
+        - "3306:3306"
+    restart: no
+    
+  app:
+    build: ./src/app
+    ports:
+        - "8080:80"
+    links:
+        - db:db
+    restart: no
+```
+Dopo di che eliminare i container e rieseguire l'up.
 ___
 ## Utenti di default:
 - Marco Rossi 
